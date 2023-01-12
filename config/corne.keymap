@@ -12,11 +12,9 @@
 #define DEF_X &mt LC(X) X
 #define DEF_C &mt LC(C) C
 #define DEF_D &mt LC(V) D
-#define DEF_V &kp V
+#define DEF_V &mt ESC V
 
 #define CAPSWORD &caps_word
-
-#define MO1 &mo 1
 
 / {
         keymap {
@@ -27,7 +25,7 @@
  &kp TAB    &kp Q &mt CAPSWORD W &mt LC(F) F  &mt LC (I) P   &mt LC(B) B         &kp J &kp L  &kp U     &kp Y &kp SINGLE_QUOTE    &kp BSPC
    &kp LCTRL  &mt LGUI A &mt LALT R &mt LCTRL S  &mt LSHIFT T   &kp G         &kp M &mt RSHFT N  &mt RCTRL E     &mt LALT I &mt RGUI O &kp SQT
    &kp LSHIFT  DEF_Z    DEF_X    DEF_C    DEF_D    DEF_V         &kp K &kp H  &kp DOT   &kp SQT        &kp MINUS           &kp ESC
-                    &kp K_SCROLL_UP &mt MO1 TAB &kp SPACE     &kp BSPC     &kp ENTER   &kp DEL
+                    &kp K_SCROLL_UP &mo 1 TAB &kp SPACE     &kp BSPC     &kp ENTER   &kp DEL
                         >;
                 };
                 lower_layer {
