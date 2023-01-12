@@ -41,7 +41,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp kp_4>, <&kp KP_EQUAL>;
-        };
+        }; 
                 
          td3: tap_dance_3 {
             compatible = "zmk,behavior-tap-dance";
@@ -82,7 +82,7 @@
 
                 num_layer {
                         bindings = <
-   &trans   &trans &trans   &trans &trans   &trans   &trans &kp KP_N1  &kp kp_n2 &kp kp_3 &trans &trans
+   &trans   &trans &trans   &trans &td4   &trans   &trans &kp KP_N1  &kp kp_n2 &kp kp_3 &trans &trans
    &kp LCTRL &trans   &trans &trans   &td3   &trans      &trans &td2  &kp kp_n5 &kp kp_6 &kp kp_0 &trans
    &kp LSHFT &trans   &trans &trans   &trans   &trans      &trans &kp KP_N7  &kp kp_n8 &kp kp_9 &trans &trans
                     	     &trans   &trans &trans   &trans &trans   &trans
