@@ -24,7 +24,7 @@
             label = "TAP_DANCE_0";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp DOT>, <&kp COMMA>;
+            bindings = <&kp DOT>, <&kp SINGLE_QUOTE>;
         };
         
          td2: tap_dance_2 {
@@ -80,8 +80,9 @@
             label = "TAP_DANCE_8";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp SEMICOLON>, <&kp COLON>;
+            bindings = <&kp APOSTROPHE>, <&kp DOUBLE_QUOTES>;
         };
+
         
     };
     combos {
@@ -114,11 +115,33 @@
         };
 
         compatible = "zmk,combos";
+        combo_amp {
+            timeout-ms = <50>;
+            key-positions = <19 20 21>;
+            bindings = <&kp AMPERSAND>;
+        };
+
+        compatible = "zmk,combos";
         combo_semi {
             timeout-ms = <50>;
             key-positions = <36 37>;
-            bindings = <&td8>;
+            bindings = <&kp SEMICOLON>;
         };
+
+        compatible = "zmk,combos";
+        combo_colon {
+            timeout-ms = <50>;
+            key-positions = <36 38>;
+            bindings = <&kp COLON>;
+        };
+
+        compatible = "zmk,combos";
+        combo_comma {
+            timeout-ms = <50>;
+            key-positions = <30 31>;
+            bindings = <&kp COMMA>;
+        };
+        
         
      };
 
@@ -129,8 +152,8 @@
                         bindings = <
        &trans &kp Q &mt CAPS W &mt LC(F) F  &mt LC (I) P   &mt LC(B) B         &kp J &kp L  &kp U     &kp Y &td7 &trans    
      &trans &mt LGUI A &mt LALT R &mt LCTRL S  &mt LSHIFT T   &kp G         &kp M &mt RSHFT N  &mt RCTRL E     &mt LALT I &mt RGUI O &trans 
-    &trans DEF_Z    DEF_X    DEF_C    DEF_D    DEF_V         &lt 4 K &kp H  &td0   &kp APOSTROPHE       &td6 &trans           
-                    &kp K_SCROLL_DOWN &lt 2 TAB &lt 1 SPACE    &kp BACKSPACE   &lt 3 ENTER   &kp DEL
+    &trans DEF_Z    DEF_X    DEF_C    DEF_D    DEF_V         &lt 4 K &kp H  &td0   &td8      &td6 &trans           
+                    &kt LALT &lt 2 TAB &lt 1 SPACE    &kp BACKSPACE   &lt 3 ENTER   &kp DEL
                         >;
                 };
                 nav_layer {
