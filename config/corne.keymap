@@ -8,16 +8,17 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-&mt {
-    tapping_term_ms = <200>;
-    };
-
 / {
         keymap {
                 compatible = "zmk,keymap";
 
-        default_layer {
-                bindings = <
+                default_layer {
+// -----------------------------------------------------------------------------------------
+// |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  `  | BKSP |
+// | CTRL |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |  '   |
+// | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  .  |  '  |  -  | ESC  |
+//                    | K_SCROLL_UP | TAB | SPC |   | BSPC | ENT  | DEL |
+                        bindings = <
    &kp TAB    &kp Q &kp W &kp F  &kp P   &kp B         &kp J &kp L  &kp U     &kp Y          &kp SINGLE_QUOTE    &kp BSPC
    &kp LCTRL  &mt LGUI A &mt LALT R &mt LCTRL S  &mt LSHIFT T   &kp G         &kp M &mt RSHFT N  &mt RCTRL E     &mt LALT I          &mt RGUI O               &kp SQT
    &kp LSHIFT &mt K_CUT Z &mt K_CUT X &mt K_COPY C  &mt ESC D   &mt K_PASTE V         &kp K &kp H  &kp DOT   &kp SQT        &kp MINUS           &kp ESC
