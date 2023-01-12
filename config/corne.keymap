@@ -26,14 +26,6 @@
             tapping-term-ms = <200>;
             bindings = <&kp DOT>, <&kp COMMA>;
         };
-
-         td1: tap_dance_1 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_1";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp SQT>, <&kp APS>;
-        };
         
          td2: tap_dance_2 {
             compatible = "zmk,behavior-tap-dance";
@@ -67,7 +59,7 @@
                         bindings = <
  &kp TAB    &kp Q &mt CAPS W &mt LC(F) F  &mt LC (I) P   &mt LC(B) B         &kp J &kp L  &kp U     &kp Y &caps_word    &kp BSPC
    &kp LCTRL  &mt LGUI A &mt LALT R &mt LCTRL S  &mt LSHIFT T   &kp G         &kp M &mt RSHFT N  &mt RCTRL E     &mt LALT I &mt RGUI O &kp SQT
-   &kp LSHIFT  DEF_Z    DEF_X    DEF_C    DEF_D    DEF_V         &lt 4 K &kp H  &td0   &td1       &kp MINUS           &kp ESC
+   &kp LSHIFT  DEF_Z    DEF_X    DEF_C    DEF_D    DEF_V         &lt 4 K &kp H  &td0   &kp APOSTROPHE       &kp MINUS           &kp ESC
                     &kp K_SCROLL_UP &lt 2 TAB &lt 1 SPACE    &kp BACKSPACE   &lt 3 ENTER   &kp DEL
                         >;
                 };
