@@ -20,7 +20,7 @@
    &kp TAB    &kp Q &kp W &kp F  &kp P   &kp B         &kp J &kp L  &kp U     &kp Y          &kp SINGLE_QUOTE    &kp BSPC
    &kp LCTRL  &mt LGUI A &mt LALT R &mt LCTRL S  &mt LSHIFT T   &kp G         &kp M &mt RSHFT N  &mt RCTRL E     &mt LALT I          &mt RGUI O               &kp SQT
    &kp LSHIFT &mt K_CUT Z &mt K_CUT X &mt K_COPY C  &mt ESC D   &mt K_PASTE V         &kp K &kp H  &kp DOT   &kp SQT        &kp MINUS           &kp ESC
-                    &kp LSHIFT   &mo NAV TAB &kp SPACE     &kp BSPC     &kp ENTER   &kp DEL
+                    &kp LSHIFT   &lt NAV TAB &kp SPACE     &kp BSPC     &kp ENTER   &kp DEL
                         >;
                 };
 
