@@ -134,7 +134,7 @@
 
                 default_layer {
                         bindings = <
- &trans    & Q &mt CAPS W &mt LC(F) F  &mt LC (I) P   &mt LC(B) B         &kp J &kp L  &kp U     &kp Y &td7    &trans
+ &trans    &kp Q &mt CAPS W &mt LC(F) F  &mt LC (I) P   &mt LC(B) B         &kp J &kp L  &kp U     &kp Y &td7    &trans
    &trans  &mt LGUI A &mt LALT R &mt LCTRL S  &mt LSHIFT T   &kp G         &kp M &mt RSHFT N  &mt RCTRL E     &mt LALT I &mt RGUI O &trans
    &trans DEF_Z    DEF_X    DEF_C    DEF_D    DEF_V         &lt 4 K &kp H  &td0   &kp APOSTROPHE       &td6           &trans
                     &kp K_SCROLL_DOWN &lt 2 TAB &lt 1 SPACE    &kp BACKSPACE   &lt 3 ENTER   &kp DEL
