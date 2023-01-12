@@ -40,7 +40,7 @@
             label = "TAP_DANCE_3";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp PLUS>, <&kp SLASH>;
+            bindings = <&kp PLUS>, <&kp MINUS>;
         };
                  
          td4: tap_dance_4 {
@@ -50,6 +50,39 @@
             tapping-term-ms = <200>;
             bindings = <&kp DOLLAR>, <&kp PERCENT>;
         };
+
+         td5: tap_dance_5 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_5";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp STAR>, <&kp SLASH>;
+        };
+
+         td6: tap_dance_6 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_6";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp MINUS>, <&kp UNDERSCORE>;
+        };
+
+        td7: tap_dance_7 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_7";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp QUESTION>, <&kp EXCLAMATION>;
+        };
+
+        td8: tap_dance_8 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_8";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp SEMICOLON>, <&kp COLON>;
+        };
+        
     };
     combos {
         compatible = "zmk,combos";
@@ -58,6 +91,42 @@
             key-positions = <15 16>;
             bindings = <&kp LC(S)>;
         };
+
+        compatible = "zmk,combos";
+        combo_scroll {
+            timeout-ms = <50>;
+            key-positions = <16 37>;
+            bindings = <&kp C_AC_SCROLL_UP>;
+        };
+
+          compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <3 4>;
+            bindings = <&kp ESC>;
+        };
+
+          compatible = "zmk,combos";
+        combo_caps {
+            timeout-ms = <50>;
+            key-positions = <17 20>;
+            bindings = <&caps_word>;
+        };
+
+        compatible = "zmk,combos";
+        combo_at {
+            timeout-ms = <50>;
+            key-positions = <20 21>;
+            bindings = <&kp AT_SIGN>;
+        };
+
+        compatible = "zmk,combos";
+        combo_semi {
+            timeout-ms = <50>;
+            key-positions = <39 40>;
+            bindings = <&td8>;
+        };
+        
      };
 
         keymap {
@@ -65,10 +134,10 @@
 
                 default_layer {
                         bindings = <
- &kp TAB    &kp Q &mt CAPS W &mt LC(F) F  &mt LC (I) P   &mt LC(B) B         &kp J &kp L  &kp U     &kp Y &caps_word    &kp BSPC
-   &kp LCTRL  &mt LGUI A &mt LALT R &mt LCTRL S  &mt LSHIFT T   &kp G         &kp M &mt RSHFT N  &mt RCTRL E     &mt LALT I &mt RGUI O &kp SQT
-   &kp LSHIFT  DEF_Z    DEF_X    DEF_C    DEF_D    DEF_V         &lt 4 K &kp H  &td0   &kp APOSTROPHE       &kp MINUS           &kp ESC
-                    &kp K_SCROLL_UP &lt 2 TAB &lt 1 SPACE    &kp BACKSPACE   &lt 3 ENTER   &kp DEL
+ &trans    & Q &mt CAPS W &mt LC(F) F  &mt LC (I) P   &mt LC(B) B         &kp J &kp L  &kp U     &kp Y &td7    &trans
+   &trans  &mt LGUI A &mt LALT R &mt LCTRL S  &mt LSHIFT T   &kp G         &kp M &mt RSHFT N  &mt RCTRL E     &mt LALT I &mt RGUI O &trans
+   &trans DEF_Z    DEF_X    DEF_C    DEF_D    DEF_V         &lt 4 K &kp H  &td0   &kp APOSTROPHE       &td6           &trans
+                    &kp K_SCROLL_DOWN &lt 2 TAB &lt 1 SPACE    &kp BACKSPACE   &lt 3 ENTER   &kp DEL
                         >;
                 };
                 nav_layer {
@@ -83,7 +152,7 @@
                 num_layer {
                         bindings = <
    &trans   &trans &trans   &trans &td4   &trans   &trans &kp N1  &kp N2 &kp N3 &trans &trans
-   &kp LCTRL &trans   &trans &trans   &td3   &trans      &trans &td2  &kp N5 &kp N6 &kp N0 &trans
+   &kp LCTRL &trans   &trans &td4   &td3   &trans      &trans &td2  &kp N5 &kp N6 &kp N0 &trans
    &kp LSHFT &trans   &trans &trans   &trans   &trans      &trans &kp N7  &kp N8 &kp N9 &trans &trans
                     	     &trans   &trans &trans   &trans &trans   &trans
                         >;
