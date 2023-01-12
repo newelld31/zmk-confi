@@ -8,8 +8,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define LYR_BASE 0
-#define LYR_NAV 1
+#define DEFAULT 0
+#define NAVI    1
 
 &mt {
         quick-tap-ms = <200>;
@@ -24,18 +24,17 @@
    &kp TAB    &kp Q &kp W &kp F  &kp P   &kp B         &kp J &kp L  &kp U     &kp Y &kp SINGLE_QUOTE    &kp BSPC
    &kp LCTRL  &mt LGUI A &mt LALT R &mt LCTRL S  &mt LSHIFT T   &kp G         &kp M &mt RSHFT N  &mt RCTRL E     &mt LALT I &mt RGUI O &kp SQT
    &kp LSHIFT &kp Z &mt K_CUT X &mt K_COPY C  &mt ESC D   &mt K_PASTE V         &kp K &kp H  &kp DOT   &kp SQT        &kp MINUS           &kp ESC
-                    &mo  LYR_NAV  &kp TAB &kp SPACE     &kp BSPC     &kp ENTER   &kp DEL
+                    &mo  NAVI &kp TAB &kp SPACE     &kp BSPC     &kp ENTER   &kp DEL
                         >;
                 };
 
-       nav_layer {
-                bindings = <
-                label = "Nav";
+                nav_layer {
+            bindings = <
    &trans   &trans &kp HOME &kp UP_ARROW  &kp END   &kp PAGE_UP         &kp J &kp L  &kp U     &kp Y &kp SINGLE_QUOTE    &kp BSPC
    &trans  &kp DEL &kp LEFT_ARROW R &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN   &kp M &mt RSHFT N  &mt RCTRL E     &mt LALT I &mt RGUI O &kp SQT
    &trans  &trans &kp BACKSPACE &trans  &trans   &trans         &kp K &kp H  &kp DOT   &kp SQT        &kp MINUS           &kp ESC
-                    &mo  LYR_NAV  &kp TAB &kp SPACE     &kp BSPC     &kp ENTER   &kp DEL
-                        >;
-                };
+                    &trans  &kp TAB &kp SPACE     &kp BSPC     &kp ENTER   &kp DEL
+            >;
         };
+    };
 };
