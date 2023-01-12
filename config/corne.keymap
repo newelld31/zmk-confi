@@ -30,7 +30,6 @@
                 };
 
                 NAV {
- |
                         bindings = <
    &trans   &trans &kp HOME &kp UP_ARROW  &kp END   &kp PAGE_UP         &trans &trans &trans &trans &trans &trans
    &trans  &kp DEL &kp LEFT_ARROW R &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN   &trans &trans &trans &trans &trans &trans
