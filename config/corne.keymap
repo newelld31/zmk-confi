@@ -22,8 +22,8 @@
                 };
                 lower_layer {
                         bindings = <
-      &trans   &trans &kp HOME &kp UP_ARROW  &kp END   &kp PAGE_UP         &trans   &trans &trans   &trans &trans   &trans
-   &trans  &kp DEL &kp LEFT_ARROW R &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans   &trans &trans   &trans &trans   &trans
+      &trans   &trans &kp HOME &kp UP  &kp END   &kp PAGE_UP         &trans   &trans &trans   &trans &trans   &trans
+   &trans  &kp DEL &kp LEFT &kp DOWN  &kp RIGHT  &kp PAGE_DOWN &trans   &trans &trans   &trans &trans   &trans
    &trans  &trans &kp BACKSPACE &trans  &trans &trans  &trans   &trans &trans   &trans &trans   &trans
                     &trans  &kp TAB &kp SPACE     &kp BSPC     &kp ENTER   &kp DEL
                         >;
