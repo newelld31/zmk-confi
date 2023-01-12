@@ -35,12 +35,28 @@
             bindings = <&kp SQT>, <&kp APS>;
         };
         
-         td3: tap_dance_3 {
+         td2: tap_dance_2 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_2";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp kp_4>, <&kp KP_EQUAL>;
+        };
+                
+         td3: tap_dance_3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_3";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp KP_PLUS>, <&kp KP_DIVIDE>;
+        };
+                 
+         td4: tap_dance_4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_4";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp DOLLAR>, <&kp PERCENT>;
         };
     };
 
@@ -66,8 +82,8 @@
 
                 num_layer {
                         bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &trans &kp KP_N1  &kp kp_n2 &kp kp_3 &trans &trans
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &trans &td3  &kp kp_n5 &kp kp_6 &kp kp_0 &trans
+   &trans   &trans &trans   &trans &trans   &trans   &trans &kp KP_N1  &kp kp_n2 &kp kp_3 &trans &trans
+   &kp LCTRL &trans   &trans &trans   &td3   &trans      &trans &td2  &kp kp_n5 &kp kp_6 &kp kp_0 &trans
    &kp LSHFT &trans   &trans &trans   &trans   &trans      &trans &kp KP_N7  &kp kp_n8 &kp kp_9 &trans &trans
                     	     &trans   &trans &trans   &trans &trans   &trans
                         >;
