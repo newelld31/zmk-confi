@@ -13,6 +13,7 @@
 #define DEF_C &mt LC(C) C
 #define DEF_D &mt LC(V) D
 #define DEF_V &mt ESC V
+#define DEF_BT1 &bt BT_1
 
 
 
@@ -199,7 +200,7 @@
                 default_layer {
                         bindings = <
        &trans &kp Q &kp W &mt LC(F) F  &mt LC(I) P   &mt LC(B) B         &kp J &kp L  &kp U     &kp Y &td7 &trans    
-     &trans &am LGUI A &am LALT R &am LCTRL S  &as LSHIFT T   &kp G         &kp M &as RSHFT N  &am RCTRL E     &am LALT I &mt RGUI O &trans 
+     &trans &am LGUI A &am LALT R &am LCTRL S  &as LSHIFT T   &kp G         &kp M &as RSHFT N  &am RCTRL E     &am LALT I &am RGUI O &trans 
     &trans &td9 &am LC(X) X  &am LC(C) C &am LC(V) D   &kp V         &lt 4 K &kp H  &td0  &td8 &td6 &trans           
                     &kt LALT &lt 2 TAB &lt 1 SPACE    &kp BACKSPACE   &lt 3 ENTER   &kp DEL
                         >;
@@ -215,7 +216,7 @@
 
                 num_layer {
                         bindings = <
-      &trans &trans &trans   &trans &td4   &trans   &trans &kp N1  &kp N2 &kp N3 &trans &trans 
+      &trans &trans &trans   &trans &td4   &trans   &trans &mt DEF_BT1 N1  &kp N2 &kp N3 &trans &trans 
      &trans &trans   &trans &td4   &td3   &trans      &trans &td2  &kp N5 &kp N6 &kp N0 &trans 
     &trans &trans   &trans &trans   &trans   &trans      &trans &kp N7  &kp N8 &kp N9 &trans &trans 
                     	     &trans   &trans &trans   &trans &trans   &trans
