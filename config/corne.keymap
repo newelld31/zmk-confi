@@ -93,14 +93,31 @@
             bindings = <&kp>, <&kp>;
         };
 
+         as: alpha_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ALPHA_SFT";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
         
     };
     combos {
         compatible = "zmk,combos";
-        combo_sav {
+        combo_capsw {
             timeout-ms = <50>;
             key-positions = <15 16>;
-            bindings = <&kp LC(S)>;
+            bindings = <&caps_word>;
+        };
+
+          compatible = "zmk,combos";
+        combo_capsl {
+            timeout-ms = <50>;
+            key-positions = <14 15 16>;
+            bindings = <&kp CAPSLOCK>;
         };
 
           compatible = "zmk,combos";
@@ -110,17 +127,10 @@
             bindings = <&kp ESC>;
         };
 
-          compatible = "zmk,combos";
-        combo_caps {
-            timeout-ms = <50>;
-            key-positions = <16 19>;
-            bindings = <&caps_word>;
-        };
-
         compatible = "zmk,combos";
         combo_at {
             timeout-ms = <50>;
-            key-positions = <19 20>;
+            key-positions = <8 9>;
             bindings = <&kp AT_SIGN>;
         };
 
@@ -152,9 +162,9 @@
 
                 default_layer {
                         bindings = <
-       &trans &kp Q &mt CAPS W &mt LC(F) F  &mt LC (I) P   &mt LC(B) B         &kp J &kp L  &kp U     &kp Y &td7 &trans    
-     &trans &am LGUI A &am LALT R &am LCTRL S  &am LSHIFT T   &kp G         &kp M &am RSHFT N  &am RCTRL E     &am LALT I &mt RGUI O &trans 
-    &trans DEF_Z    DEF_X    DEF_C    DEF_D    DEF_V         &lt 4 K &kp H  &td0   &td8      &td6 &trans           
+       &trans &kp Q &kp W &mt LC(F) F  &mt LC(I) P   &mt LC(B) B         &kp J &kp L  &kp U     &kp Y &td7 &trans    
+     &trans &am LGUI A &am LALT R &am LCTRL S  &as LSHIFT T   &kp G         &kp M &as RSHFT N  &am RCTRL E     &am LALT I &mt RGUI O &trans 
+    &trans DEF_Z    &am LC(X) X  &am LC(C) C &am LC(V) D   &kp V         &lt 4 K &kp H  &td0   &td8      &td6 &trans           
                     &kt LALT &lt 2 TAB &lt 1 SPACE    &kp BACKSPACE   &lt 3 ENTER   &kp DEL
                         >;
                 };
