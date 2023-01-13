@@ -64,7 +64,7 @@
             label = "TAP_DANCE_6";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp MINUS>, <&kp UNDERSCORE>;
+            bindings = <&kp MINUS>, <&kp UNDERSCORE>, <&kp TILDE>;
         };
 
         td7: tap_dance_7 {
@@ -180,15 +180,15 @@
         compatible = "zmk,combos";
         combo_l {
             timeout-ms = <50>;
-            key-positions = <28 29>;
-            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <27 28>;
+            bindings = <&mt LEFT_BRACE LEFT_BRACKET>;
         };
 
         compatible = "zmk,combos";
         combo_rbracket {
             timeout-ms = <50>;
-            key-positions = <28 29 30>;
-            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <26 27 28>;
+            bindings = <&mp RIGHT_BRACE RIGHT_BRACKET>;
         };
         
      };
@@ -200,7 +200,7 @@
                         bindings = <
        &trans &kp Q &kp W &mt LC(F) F  &mt LC(I) P   &mt LC(B) B         &kp J &kp L  &kp U     &kp Y &td7 &trans    
      &trans &am LGUI A &am LALT R &am LCTRL S  &as LSHIFT T   &kp G         &kp M &as RSHFT N  &am RCTRL E     &am LALT I &mt RGUI O &trans 
-    &trans &td9 &am LC(X) X  &am LC(C) C &am LC(V) D   &kp V         &lt 4 K &kp H  &td0  &td8      &td6 &trans           
+    &trans &td9 &am LC(X) X  &am LC(C) C &am LC(V) D   &kp V         &lt 4 K &kp H  &td0  &td8 &td6 &trans           
                     &kt LALT &lt 2 TAB &lt 1 SPACE    &kp BACKSPACE   &lt 3 ENTER   &kp DEL
                         >;
                 };
