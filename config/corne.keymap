@@ -122,13 +122,6 @@
         };
 
         compatible = "zmk,combos";
-        combo_semi {
-            timeout-ms = <50>;
-            key-positions = <36 37>;
-            bindings = <&kp SEMICOLON>;
-        };
-
-        compatible = "zmk,combos";
         combo_colon {
             timeout-ms = <50>;
             key-positions = <36 38>;
@@ -138,7 +131,7 @@
         compatible = "zmk,combos";
         combo_comma {
             timeout-ms = <50>;
-            key-positions = <30 31>;
+            key-positions = <31 32>;
             bindings = <&kp COMMA>;
         };
         
