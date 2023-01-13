@@ -188,7 +188,7 @@
         combo_rbracket {
             timeout-ms = <50>;
             key-positions = <26 27 28>;
-            bindings = <&mp RIGHT_BRACE RIGHT_BRACKET>;
+            bindings = <&mt RIGHT_BRACE RIGHT_BRACKET>;
         };
         
      };
