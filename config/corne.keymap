@@ -24,7 +24,7 @@
             label = "TAP_DANCE_0";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp DOT>, <&kp SINGLE_QUOTE>;
+            bindings = <&kp APOSTROPHE>, <&kp DOUBLE_QUOTES>;
         };
         
          td2: tap_dance_2 {
@@ -80,7 +80,15 @@
             label = "TAP_DANCE_8";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp APOSTROPHE>, <&kp DOUBLE_QUOTES>;
+            bindings = <&kp AT_SIGN>, <&kp AMPERSAND>;
+        };
+
+         td9: tap_dance_9 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_9";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp Z>, <&kp lc(Z)>;
         };
 
         am: alpha_mods {
@@ -128,31 +136,59 @@
         };
 
         compatible = "zmk,combos";
-        combo_at {
+        combo_scolon {
             timeout-ms = <50>;
-            key-positions = <8 9>;
-            bindings = <&kp AT_SIGN>;
-        };
-
-        compatible = "zmk,combos";
-        combo_amp {
-            timeout-ms = <50>;
-            key-positions = <19 20 21>;
-            bindings = <&kp AMPERSAND>;
+            key-positions = <7 8>;
+            bindings = <&kp SEMICOLON>;
         };
 
         compatible = "zmk,combos";
         combo_colon {
             timeout-ms = <50>;
-            key-positions = <36 38>;
+            key-positions = <7 8 9>;
             bindings = <&kp COLON>;
         };
 
         compatible = "zmk,combos";
+        combo_dot {
+            timeout-ms = <50>;
+            key-positions = <19 20>;
+            bindings = <&kp DOT>;
+        };
+
+         compatible = "zmk,combos";
         combo_comma {
             timeout-ms = <50>;
-            key-positions = <31 32>;
+            key-positions = <19 20 21>;
             bindings = <&kp COMMA>;
+        };
+
+        compatible = "zmk,combos";
+        combo_lpar {
+            timeout-ms = <50>;
+            key-positions = <31 32>;
+            bindings = <&kp LEFT_PARENTHESIS>;
+        };
+
+        compatible = "zmk,combos";
+        combo_rpar {
+            timeout-ms = <50>;
+            key-positions = <31 32 33>;
+            bindings = <&kp RIGHT_PARENTHESIS;
+        };
+
+        compatible = "zmk,combos";
+        combo_l {
+            timeout-ms = <50>;
+            key-positions = <28 29>;
+            bindings = <&kp LEFT_BRACKET>;
+        };
+
+        compatible = "zmk,combos";
+        combo_rbracket {
+            timeout-ms = <50>;
+            key-positions = <28 29 30>;
+            bindings = <&kp RIGHT_BRACKET>;
         };
         
      };
@@ -164,7 +200,7 @@
                         bindings = <
        &trans &kp Q &kp W &mt LC(F) F  &mt LC(I) P   &mt LC(B) B         &kp J &kp L  &kp U     &kp Y &td7 &trans    
      &trans &am LGUI A &am LALT R &am LCTRL S  &as LSHIFT T   &kp G         &kp M &as RSHFT N  &am RCTRL E     &am LALT I &mt RGUI O &trans 
-    &trans DEF_Z    &am LC(X) X  &am LC(C) C &am LC(V) D   &kp V         &lt 4 K &kp H  &td0   &td8      &td6 &trans           
+    &trans &td9 &am LC(X) X  &am LC(C) C &am LC(V) D   &kp V         &lt 4 K &kp H  &td0  &td8      &td6 &trans           
                     &kt LALT &lt 2 TAB &lt 1 SPACE    &kp BACKSPACE   &lt 3 ENTER   &kp DEL
                         >;
                 };
