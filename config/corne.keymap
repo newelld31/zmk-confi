@@ -225,10 +225,10 @@
 
                         sym_layer {
                         bindings = <
-      &trans &trans &trans &trans  &kp LC(LA(LS(B)))   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &trans 
-    &trans &trans   &trans &trans   &kp C_PLAY_PAUSE   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &trans 
-    &trans &trans   &trans &trans   &kp LC(LA(LS(G)))   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &trans 
-                    	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+      &trans &trans &trans &trans  &kp LC(LA(LS(B)))   &trans &trans  &bt BT_SEL1 &bt BT_SEL2 &bt BT_SEL3 &bt BT_SEL4 &trans
+     &trans   &trans &trans  &trans &kp C_PLAY_PAUSE   &trans &trans &trans &trans &trans &trans &trans 
+     &trans   &trans &trans  &trans &mt LC(LA(LS(P))) LC(LA(LS(G)))   &trans &trans &trans &trans &trans &trans &trans 
+                    	     &trans &trans &trans &trans &trans &trans
                         >;
                 };
         };
