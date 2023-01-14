@@ -228,7 +228,7 @@
         combo_rbracket {
             timeout-ms = <50>;
             key-positions = <13 14 15 16>;
-            bindings = <&kp LA(LEFT_ARROW)>;
+            bindings = <&kp LA(LEFT)>;
         };
 
         compatible = "zmk,combos";
