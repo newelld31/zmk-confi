@@ -100,6 +100,30 @@
             bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
         };
 
+        td11: tap_dance_11 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_11";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+        };
+
+        td12: tap_dance_12 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_12";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp SLASH>, <&kp BACKSLASH>;
+        };
+
+        td13: tap_dance_13 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_13";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp STAR>, <&kp CARET>;
+        };
+
         am: alpha_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "ALPHA_MT";
@@ -180,24 +204,38 @@
         };
 
         compatible = "zmk,combos";
-        combo_rpar {
+        combo_bracket {
             timeout-ms = <50>;
             key-positions = <31 32 33>;
-            bindings = <&kp RIGHT_PARENTHESIS>;
+            bindings = <&td11>;
         };
 
         compatible = "zmk,combos";
         combo_l {
             timeout-ms = <50>;
             key-positions = <27 28>;
-            bindings = <&mt LEFT_BRACE LEFT_BRACKET>;
+            bindings = <&td12>;
         };
 
         compatible = "zmk,combos";
         combo_rbracket {
             timeout-ms = <50>;
             key-positions = <26 27 28>;
-            bindings = <&mt RIGHT_BRACE RIGHT_BRACKET>;
+            bindings = <&td13>;
+        };
+
+        compatible = "zmk,combos";
+        combo_rbracket {
+            timeout-ms = <50>;
+            key-positions = <25 26 27 28>;
+            bindings = <&kp LA(LEFT_ARROW)>;
+        };
+
+        compatible = "zmk,combos";
+        combo_rbracket {
+            timeout-ms = <50>;
+            key-positions = <31 32 33 34>;
+            bindings = <&kp LA(RIGHT_ARROW)>;
         };
         
      };
