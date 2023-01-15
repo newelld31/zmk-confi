@@ -287,7 +287,7 @@
 
                 adobe_layer {
                         bindings = <
-      &trans &mt L W &trans &mt LC(D) LBKT &mp LC(L) RBKT &trans &bt BT_CLR  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans
+      &trans &mt L W &trans &mt LC(D) LBKT &mt LC(L) RBKT &trans &bt BT_CLR  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans
      &trans   &trans &trans  &trans &td13 &mt P E &trans &trans &trans &trans &bt BT_SEL 0 &trans 
      &trans   &trans &trans  &kp LC(MINUS) &mt LC(EQUAL) LC(LA(LS(G)))   &trans &trans &trans &trans &trans &trans &trans 
                     	     &trans &trans &trans &trans &trans &trans
