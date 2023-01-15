@@ -290,7 +290,7 @@
       &trans &mt L W &trans &mt LC(D) LBKT &mt LC(L) RBKT &trans &trans   &trans &trans   &trans &trans &trans
      &trans   &trans &trans  &trans &td13 &mt P E &trans   &trans &trans   &trans &trans &trans
      &trans   &trans &trans  &mt C LC(MINUS) &mt LC(V) LC(D) &mt V LC(EQUAL) &trans &trans &trans &trans &trans &trans 
-                    	     &k DEL &trans &kp SPACE &trans &trans &trans
+                    	     &kp DEL &trans &kp SPACE &trans &trans &trans
                         >;
                 };
         };
