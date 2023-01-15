@@ -241,7 +241,7 @@
           compatible = "zmk,combos";
         combo_adobe {
             timeout-ms = <50>;
-            key-positions = <l 2>;
+            key-positions = <1 2>;
             bindings = <&tog 4>;
         };
         
