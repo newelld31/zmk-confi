@@ -289,7 +289,7 @@
                         bindings = <
       &trans &mt L W &trans &mt LC(D) LBKT &mt LC(L) RBKT &trans &bt BT_CLR  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans
      &trans   &trans &trans  &trans &td13 &mt P E &trans &trans &trans &trans &bt BT_SEL 0 &trans 
-     &trans   &trans &trans  &kp LC(MINUS) &trans &kp LC(EQUAL) &trans &trans &trans &trans &trans &trans 
+     &trans   &trans &trans  &mt C LC(MINUS) &trans &mt V LC(EQUAL) &trans &trans &trans &trans &trans &trans 
                     	     &trans &trans &kp SPACE &trans &trans &trans
                         >;
                 };
