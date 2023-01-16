@@ -262,7 +262,7 @@
                         bindings = <
         &trans &trans &kp HOME &kp UP  &kp END   &kp PAGE_UP         &trans   &trans &trans   &trans &trans &trans   
     &trans &kp DEL &kp LEFT &kp DOWN  &kp RIGHT  &kp PAGE_DOWN &trans   &trans &trans   &trans &trans &trans   
-     &trans &trans &kp BACKSPACE &trans  &trans &trans  &trans   &trans &trans   &trans &trans &trans   
+     &trans &trans &kp BACKSPACE &mt C LC(MINUS)  &trans &mt V LC(EQUAL)  &trans   &trans &trans   &trans &trans &trans   
                     &trans   &trans &trans   &trans &trans   &trans
                         >;
                 };
