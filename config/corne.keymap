@@ -220,7 +220,7 @@
         compatible = "zmk,combos";
         combo_rbracket {
             timeout-ms = <50>;
-            key-positions = <26 27 28>;
+            key-positions = <26 27>;
             bindings = <&td13>;
         };
 
@@ -248,7 +248,7 @@
              compatible = "zmk,combos";
         combo_par {
             timeout-ms = <50>;
-            key-positions = <29 30>;
+            key-positions = <25 26>;
             bindings = <&kp LC(Z)>;
         };
         
