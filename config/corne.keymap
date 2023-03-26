@@ -197,11 +197,11 @@
             bindings = <&kp COMMA>;
         };
 
-        compatible = "zmk,combos";
+         compatible = "zmk,combos";
         combo_par {
             timeout-ms = <50>;
             key-positions = <31 32>;
-            bindings = <&kp LPAR>;
+            bindings = <&td10>;
         };
 
         compatible = "zmk,combos";
