@@ -200,8 +200,8 @@
         compatible = "zmk,combos";
         combo_par {
             timeout-ms = <50>;
-            key-positions = <32 33>;
-            bindings = <&td10>;
+            key-positions = <31 32>;
+            bindings = <&kp LPAR>;
         };
 
         compatible = "zmk,combos";
