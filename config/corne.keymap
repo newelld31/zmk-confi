@@ -225,18 +225,6 @@
             bindings = <&td13>;
         };
 
-        compatible = "zmk,combos";
-        combo_laleft {
-            timeout-ms = <50>;
-            key-positions = <13 14 15 16>;
-            bindings = <&kp LA(LEFT)>;
-        };
-
-        compatible = "zmk,combos";
-        combo_rbracket {
-            timeout-ms = <50>;
-            key-positions = <19 20 21 22>;
-            bindings = <&kp LA(RIGHT_ARROW)>;
         };
 
           compatible = "zmk,combos";
