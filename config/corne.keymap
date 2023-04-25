@@ -225,8 +225,6 @@
             bindings = <&td13>;
         };
 
-        };
-
           compatible = "zmk,combos";
         combo_adobe {
             timeout-ms = <50>;
