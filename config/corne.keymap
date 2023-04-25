@@ -232,8 +232,8 @@
             bindings = <&tog 4>;
         };
 
-             compatible = "zmk,combos";
-        combo_par {
+            compatible = "zmk,combos";
+        combo_undo {
             timeout-ms = <50>;
             key-positions = <25 26>;
             bindings = <&kp LC(Z)>;
