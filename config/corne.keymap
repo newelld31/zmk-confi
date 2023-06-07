@@ -14,6 +14,7 @@
 #define DEF_C &mt LC(C) C
 #define DEF_D &mt LC(V) D
 #define DEF_V &mt ESC V
+#define DEF_F &mt LC(F) F
 #define DEF_Adobe & BT_1
 
 
@@ -246,7 +247,7 @@
 
                 default_layer {
                         bindings = <
-       &trans &kp Q &kp W &mt LC(F) F  &mt LC(I) P   &mt LC(B) B &kp J &kp L  &kp U     &kp Y &td7 &trans    
+       &trans &kp Q &kp W &am LC(F) F  &am LC(I) P   &mt LC(B) B &kp J &kp L  &kp U     &kp Y &td7 &trans    
      &trans &am LGUI A &am LALT R &am LCTRL S  &as LSHIFT T &kp G &kp M &as RSHFT N  &am RCTRL E &am LALT I &am RGUI O &trans 
     &trans &td9 &am LC(X) X  &am LC(C) C &am LC(V) D   &kp V &lt 4 K &kp H  &td0  &td8 &td6 &trans           
                     &kp DEL &lt 1 TAB &lt 2 SPACE &kp BACKSPACE &lt 3 ENTER   &kp DEL
