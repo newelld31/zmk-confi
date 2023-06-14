@@ -255,9 +255,9 @@
                 };
                 nav_layer {
                         bindings = <
-        &trans &trans &kp HOME &kp UP  &kp END   &kp PAGE_UP         &trans   &kp KC_f1 &kp KC_f2   &kp KC_f3 &kp KC_f4 &trans   
-    &trans &kp DEL &kp LEFT &kp DOWN  &kp RIGHT  &kp PAGE_DOWN &trans    &kp KC_f5 &kp KC_f6   &kp KC_f7 &kp KC_f8 &trans   
-     &trans &trans &kp BACKSPACE &mt C LC(MINUS)  &trans &mt V LC(EQUAL)  &trans   KC_f9 &kp KC_10   &kp KC_f11 &kp KC_f12 &trans   
+        &trans &trans &kp HOME &kp UP  &kp END   &kp PAGE_UP         &trans   &kp f1 &kp f2   &kp f3 &kp f4 &trans   
+    &trans &kp DEL &kp LEFT &kp DOWN  &kp RIGHT  &kp PAGE_DOWN &trans    &kp f5 &kp f6   &kp f7 &kp f8 &trans   
+     &trans &trans &kp BACKSPACE &mt C LC(MINUS)  &trans &mt V LC(EQUAL)  &trans  &kp f9 &kp f10   &kp f11 &kp f12 &trans   
                     &trans   &trans &trans   &trans &trans   &trans
                         >;
                 };
