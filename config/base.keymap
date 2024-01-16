@@ -58,9 +58,9 @@ ZMK_BEHAVIOR(at, tap_dance,
     bindings = <&kp AT_SIGN>, <&kp AMPERSAND>;
 )
 
-ZMK_BEHAVIOR(hy, tap_dance,
+ZMK_BEHAVIOR(br, tap_dance,
     tapping-term-ms = <200>;
-    bindings = bindings = <&kp MINUS>, <&kp UNDERSCORE>, <&kp TILDE>;
+    bindings = <&kp SLASH>, <&kp BACKSLASH>;
 )
 
 ZMK_BEHAVIOR(par, tap_dance,
@@ -73,9 +73,9 @@ ZMK_BEHAVIOR(br, tap_dance,
     bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
 )
 
-ZMK_BEHAVIOR(br, tap_dance,
+ZMK_BEHAVIOR(hy, tap_dance,
     tapping-term-ms = <200>;
-    bindings = <&kp SLASH>, <&kp BACKSLASH>;
+    bindings = bindings = <&kp MINUS>, <&kp UNDERSCORE>, <&kp TILDE>;
 )
 
 / {
