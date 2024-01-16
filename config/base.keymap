@@ -21,8 +21,51 @@
 #define DEF_Adobe & BT_1
 
 //Personal includes
-#include "Includes/settings.dtsi"
-#include "Includes/behaviours_homerow_mods.dtsi"
+#include "../zmk-nodefree-config/helper.h"
+
+/* Global settings */
+
+#define QUICK_TAP_MS 175
+
+&sk {  // sticky-key config
+    release-after-ms = <900>;  // release after 0.6s
+    quick-release;             // no double capitalization when rolling keys
+};
+
+&sl {  // sticky-layer config
+    ignore-modifiers;          // allow chording sticky mods & layers
+};
+
+&lt {  // layer-tap config
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+};
+
+/* Homerow mods */
+
+#define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4  // left hand
+#define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // right hand
+#define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                      // thumbs
+
+#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
+    ZMK_BEHAVIOR(NAME, hold_tap, \
+        flavor = "balanced"; \
+        tapping-term-ms = <280>; \
+        quick-tap-ms = <QUICK_TAP_MS>; \
+        require-prior-idle-ms = <150>; \
+        bindings = <HOLD>, <TAP>; \
+        hold-trigger-key-positions = <TRIGGER_POS>; \
+        hold-trigger-on-release; \
+    )
+MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMs
+MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
+
+MAKE_HRM(hml_repeat, &kp, &key_repeat, KEYS_R THUMBS)  // used for HRM-combo
+MAKE_HRM(hmr_lpar_lt, &kp, &lpar_lt, KEYS_L THUMBS)    // "    "   "   "
+MAKE_HRM(hmr_rpar_gt, &kp, &rpar_gt, KEYS_L THUMBS)    // "    "   "   "
+
+//Combos
 
 #undef COMBO_TERM
 #define COMBO_TERM 50
@@ -85,11 +128,11 @@ ZMK_BEHAVIOR(hyph, tap_dance,
                 default_layer {
                         bindings = <
 // ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮    ╭────────────────────────┬────────────────────────┬────────────────────────┬───────────────────────┬────────────────────────┬────────────────────────╮
-     &trans                   &kp Q                    &kp W                    &hm_l LCTRL(F) F         &hm_l LCTRL(I)           &hm_l LCTRL(B) B              &kp J                    &kp L                    &kp U                    &kp Y                    &qu                      &trans
+     &trans                   &kp Q                    &kp W                    &hml LCTRL(F) F          &hml LCTRL(I)            &hml LCTRL(B) B               &kp J                    &kp L                    &kp U                    &kp Y                    &qu                      &trans
 // ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┼────────────────────────┤
-     &trans                   &hm_l LGUI A             &hm_l LALT R             &hm_l LCTRL S            &hm_shift_l LSHFT T      &kp G                         &kp M                    &hm_shift_r RSHFT N      &hm_r RCTRL E            &hm_r LALT I             &hm_r RGUI O             &trans
+     &trans                   &hml LGUI A             &hml LALT R               &hml LCTRL S             &hml LSHFT T             &kp G                         &kp M                    &hmr RSHFT N             &hmr RCTRL E             &hmr LALT I              &hmr RGUI O             &trans
 // ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┼────────────────────────┤
-     &trans                   &z_undo                  &hm_l LCTRL(X) X         &hm_l LCTRL(C)           &hm_l LCTRL(V) D         &kp V                         &lt 4 K                  &kp H                    &ap_qo                   &at                      &hyph                    &trans
+     &trans                   &z_undo                  &hml LCTRL(X) X         &hml LCTRL(C)             &hml LCTRL(V) D          &kp V                         &lt 4 K                  &kp H                    &ap_qo                   &at                      &hyph                    &trans
 // ╰────────────────────────┴────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┼────────────────────────╯
                                                                                 &kp DEL                  &lt 1 TAB                &lt 2 SPACE                   &kp BACKSPACE            &lt 3 ENTER              &kp DEL
 //                                                                            ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
