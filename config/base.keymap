@@ -97,7 +97,7 @@ ZMK_BEHAVIOR(at, tap_dance,
     bindings = <&kp AT_SIGN>, <&kp AMPERSAND>;
 )
 
-ZMK_BEHAVIOR(br, tap_dance,
+ZMK_BEHAVIOR(sl, tap_dance,
     tapping-term-ms = <200>;
     bindings = <&kp SLASH>, <&kp BACKSLASH>;
 )
