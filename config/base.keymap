@@ -3,11 +3,22 @@
  *
  * SPDX-License-Identifier: MIT
  */
+ 
+ // Define layer numbers
+ #define NUM_WORD 
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
+
+#define DEF_Z &mt LC(Z) Z
+#define DEF_X &mt LC(X) X
+#define DEF_C &mt LC(C) C
+#define DEF_D &mt LC(V) D
+#define DEF_V &mt ESC V
+#define DEF_F &mt LC(F) F
+#define DEF_Adobe & BT_1
 
 //Personal includes
 #include "../zmk-nodefree-config/helper.h"
