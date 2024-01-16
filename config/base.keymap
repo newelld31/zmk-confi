@@ -74,7 +74,7 @@ ZMK_COMBO(dot, &kp DOT, 19 20, ALL)
 ZMK_COMBO(comma, &kp COMMA, 19 20 21, ALL)
 ZMK_COMBO(par, &par, 31 32, ALL)
 ZMK_COMBO(bracket, &br, 31 32 33, ALL)
-ZMK_COMBO(slash, &sl, 27 28, ALL)
+ZMK_COMBO(slash, &sla, 27 28, ALL)
 ZMK_COMBO(undo, &kp LC(Z), 25 26, ALL)
 
 ZMK_BEHAVIOR(qu, tap_dance,
@@ -97,7 +97,7 @@ ZMK_BEHAVIOR(at, tap_dance,
     bindings = <&kp AT_SIGN>, <&kp AMPERSAND>;
 )
 
-ZMK_BEHAVIOR(sl, tap_dance,
+ZMK_BEHAVIOR(sla, tap_dance,
     tapping-term-ms = <200>;
     bindings = <&kp SLASH>, <&kp BACKSLASH>;
 )
