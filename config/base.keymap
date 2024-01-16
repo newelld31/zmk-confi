@@ -17,6 +17,9 @@
     #define _BT_SEL_KEYS_ &trans &trans &trans &trans &trans
 #endif
 
+#define BASE 0
+#define NAV 1
+#define NUM 2
 
 //Personal includes
 #include "../zmk-nodefree-config/helper.h"
@@ -63,17 +66,17 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
 #undef COMBO_TERM
 #define COMBO_TERM 50
-ZMK_COMBO(Save, &kp LC(S), 15 16, ALL)
-ZMK_COMBO(Capsword, &caps_word, 14 15 16, ALL)
-ZMK_COMBO(esc, &kp ESC, 3 4, ALL)
-ZMK_COMBO(semicolon, &kp SEMICOLON, 7 8, ALL)
-ZMK_COMBO(colon, &kp COLON, 7 8 9, ALL)
-ZMK_COMBO(dot, &kp DOT, 19 20, ALL)
-ZMK_COMBO(comma, &kp COMMA, 19 20 21, ALL)
-ZMK_COMBO(par, &par, 31 32, ALL)
-ZMK_COMBO(bracket, &br, 31 32 33, ALL)
-ZMK_COMBO(slash, &sla, 27 28, ALL)
-ZMK_COMBO(undo, &kp LC(Z), 25 26, ALL)
+ZMK_COMBO(Save, &kp LC(S), 12 13, ALL)
+ZMK_COMBO(Capsword, &caps_word, 11 12 13, ALL)
+ZMK_COMBO(esc, &kp ESC, 2 3, ALL)
+ZMK_COMBO(semicolon, &kp SEMICOLON, 6 7, ALL)
+ZMK_COMBO(colon, &kp COLON, 6 7 8, ALL)
+ZMK_COMBO(dot, &kp DOT, 15 16, ALL)
+ZMK_COMBO(comma, &kp COMMA, 15 16 17, ALL)
+ZMK_COMBO(par, &par, 26 27, ALL)
+ZMK_COMBO(bracket, &br, 26 27 28, ALL)
+ZMK_COMBO(slash, &sla, 22 23, ALL)
+ZMK_COMBO(undo, &kp LC(Z), 20 21, ALL)
 
 ZMK_BEHAVIOR(qu, tap_dance,
     tapping-term-ms = <200>;
@@ -115,12 +118,7 @@ ZMK_BEHAVIOR(hyph, tap_dance,
     bindings = <&kp MINUS>, <&kp UNDERSCORE>, <&kp TILDE>;
 )
 
-/ {
-        keymap {
-                compatible = "zmk,keymap";
-
-                default_layer {
-                        bindings = <
+ZMK_LAYER(base,
 // ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮    ╭────────────────────────┬────────────────────────┬────────────────────────┬───────────────────────┬────────────────────────╮
      &kp Q                    &kp W                    &hml LCTRL(F) F          &hml LCTRL(I)            &hml LCTRL(B) B               &kp J                    &kp L                    &kp U                    &kp Y                    &qu 
 // ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┤
@@ -130,11 +128,9 @@ ZMK_BEHAVIOR(hyph, tap_dance,
 // ╰────────────────────────┴────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┴───────────────────────┴────────────────────────╯
                                                        &kp DEL                  &lt 1 TAB                &lt 2 SPACE                   &kp BACKSPACE            &lt 3 ENTER              &kp DEL
 //                                                   ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
-                        >;
-                };
-                
-                nav_layer {
-                        bindings = <              
+)
+
+ZMK_LAYER(nav,            
 // ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮    ╭────────────────────────┬────────────────────────┬────────────────────────┬───────────────────────┬────────────────────────╮
      &trans                   &kp HOME                 &kp UP                   &kp END                  &kp PAGE_UP                   &trans                    &kp F1                   &kp F2                  &kp F3                   &kp F4
 // ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┤
@@ -144,17 +140,12 @@ ZMK_BEHAVIOR(hyph, tap_dance,
 // ╰────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┴───────────────────────┴────────────────────────╯
                                                        &trans                   &trans                   &trans                        &trans                    &trans                   &trans 
 //                                                   ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
-                        >;
-                };
+)
 
-                num_layer {
+ZMK_LAYER(num,
                         bindings = <
       &trans &kp CARET &kp HASH &kp PERCENT   &trans   &trans &kp N1 &kp N2 &kp N3 &trans
      &kp DOLLAR  &kp STAR &kp PLUS  &kp EQUAL  &kp PIPE     &trans &kp N4  &kp N5 &kp N6 &kp N0
     &trans   &trans &kp SLASH &kp MINUS   &trans      &trans &kp N7  &kp N8 &kp N9 &trans
                     	     &trans   &trans &trans   &trans &trans   &trans
-                        >;
-                };
-
-        };
-};
+)
