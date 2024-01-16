@@ -1,0 +1,286 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+//Personal includes
+#include "Includes/settings.dtsi"
+#include "Includes/behaviours_homerow_mods.dtsi"
+
+/ {
+
+    behaviors {
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp APOSTROPHE>, <&kp DOUBLE_QUOTES>;
+        };
+        
+         td2: tap_dance_2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_2";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N4>, <&kp EQUAL>;
+        }; 
+                
+         td3: tap_dance_3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_3";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp PLUS>, <&kp MINUS>;
+        };
+                 
+         td4: tap_dance_4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_4";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp DOLLAR>, <&kp PERCENT>;
+        };
+
+         td5: tap_dance_5 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_5";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp STAR>, <&kp SLASH>;
+        };
+
+         td6: tap_dance_6 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_6";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp MINUS>, <&kp UNDERSCORE>, <&kp TILDE>;
+        };
+
+        td7: tap_dance_7 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_7";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp QUESTION>, <&kp EXCLAMATION>;
+        };
+
+        td8: tap_dance_8 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_8";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp AT_SIGN>, <&kp AMPERSAND>;
+        };
+
+         td9: tap_dance_9 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_9";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp Z>, <&kp LC(Z)>;
+        };
+
+         td10: tap_dance_10 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_10";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LPAR>, <&kp RPAR>;
+        };
+
+        td11: tap_dance_11 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_11";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+        };
+
+        td12: tap_dance_12 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_12";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp SLASH>, <&kp BACKSLASH>;
+        };
+
+        td13: tap_dance_13 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_13";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&as LSHIFT T>, <&kp LC(T)>;
+        };
+
+        am: alpha_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ALPHA_MT";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
+         as: alpha_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ALPHA_SFT";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
+        
+    };
+    combos {
+        compatible = "zmk,combos";
+        combo_capsw {
+            timeout-ms = <50>;
+            key-positions = <15 16>;
+            bindings = <&kp LC(S)>;
+        };
+
+          compatible = "zmk,combos";
+        combo_capsl {
+            timeout-ms = <50>;
+            key-positions = <14 15 16>;
+            bindings = <&caps_word>;
+        };
+
+          compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <3 4>;
+            bindings = <&kp ESC>;
+        };
+
+        compatible = "zmk,combos";
+        combo_scolon {
+            timeout-ms = <50>;
+            key-positions = <7 8>;
+            bindings = <&kp SEMICOLON>;
+        };
+
+        compatible = "zmk,combos";
+        combo_colon {
+            timeout-ms = <50>;
+            key-positions = <7 8 9>;
+            bindings = <&kp COLON>;
+        };
+
+        compatible = "zmk,combos";
+        combo_dot {
+            timeout-ms = <50>;
+            key-positions = <19 20>;
+            bindings = <&kp DOT>;
+        };
+
+         compatible = "zmk,combos";
+        combo_comma {
+            timeout-ms = <50>;
+            key-positions = <19 20 21>;
+            bindings = <&kp COMMA>;
+        };
+
+         compatible = "zmk,combos";
+        combo_par {
+            timeout-ms = <50>;
+            key-positions = <31 32>;
+            bindings = <&td10>;
+        };
+
+        compatible = "zmk,combos";
+        combo_bracket {
+            timeout-ms = <50>;
+            key-positions = <31 32 33>;
+            bindings = <&td11>;
+        };
+
+        compatible = "zmk,combos";
+        combo_l {
+            timeout-ms = <50>;
+            key-positions = <27 28>;
+            bindings = <&td12>;
+        };
+
+        compatible = "zmk,combos";
+        combo_rbracket {
+            timeout-ms = <50>;
+            key-positions = <26 27>;
+            bindings = <&td13>;
+        };
+
+          compatible = "zmk,combos";
+        combo_adobe {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&tog 4>;
+        };
+
+            compatible = "zmk,combos";
+        combo_undo {
+            timeout-ms = <50>;
+            key-positions = <25 26>;
+            bindings = <&kp LC(Z)>;
+        };
+        
+     };
+
+        keymap {
+                compatible = "zmk,keymap";
+
+                default_layer {
+                        bindings = <
+       &trans &kp Q &kp W &am LC(F) F  &am LC(I) P   &mt LC(B) B &kp J &kp L  &kp U     &kp Y &td7 &trans    
+     &trans &hm_l LGUI A &hm_l LALT R &hm_l LCTRL S  &hm_shift_l LSHFT T  &kp G &kp M &hm_shift_r RSHFT N &hm_r RCTRL E &hm_r LALT I &hm_r RGUI O &trans 
+    &trans &td9 &am LC(X) X  &am LC(C) C &am LC(V) D   &kp V &lt 4 K &kp H  &td0  &td8 &td6 &trans           
+                    &kp DEL &lt 1 TAB &lt 2 SPACE &kp BACKSPACE &lt 3 ENTER   &kp DEL
+                        >;
+                };
+                nav_layer {
+                        bindings = <
+        &trans &trans &kp HOME &kp UP  &kp END   &kp PAGE_UP         &trans   &kp F1 &kp F2   &kp F3 &kp F4 &trans   
+    &trans &kp DEL &kp LEFT &kp DOWN  &kp RIGHT  &kp PAGE_DOWN &trans    &kp F5 &kp F6   &kp F7 &kp F8 &trans   
+     &trans &trans &kp BACKSPACE &mt C LC(MINUS)  &trans &mt V LC(EQUAL)  &trans  &kp F9 &kp F10   &kp F11 &kp F12 &trans   
+                    &trans   &trans &trans   &trans &trans   &trans
+                        >;
+                };
+
+                num_layer {
+                        bindings = <
+      &trans &trans &kp CARET &kp HASH &kp PERCENT   &trans   &trans &kp N1 &kp N2 &kp N3 &trans &trans 
+     &trans &kp DOLLAR  &kp STAR &kp PLUS  &kp EQUAL  &kp PIPE     &trans &td2  &kp N5 &kp N6 &kp N0 &trans 
+    &trans &trans   &trans &kp SLASH &kp MINUS   &trans      &trans &kp N7  &kp N8 &kp N9 &trans &trans 
+                    	     &trans   &trans &trans   &trans &trans   &trans
+                        >;
+                };
+
+                        sym_layer {
+                        bindings = <
+      &trans &trans &trans &trans  &kp LC(LA(LS(B)))   &trans &bt BT_CLR  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans
+     &trans   &trans &trans  &trans &kp C_PLAY_PAUSE   &trans &out OUT_USB &out OUT_BLE &trans &trans &bt BT_SEL 0 &trans 
+     &trans   &trans &trans  &trans &mt LC(LA(LS(P))) LC(LA(LS(G)))   &trans &trans &trans &trans &trans &trans &trans 
+                    	     &trans &trans &trans &trans &trans &trans
+                        >;
+                };
+
+                adobe_layer {
+                        bindings = <
+      &trans &mt L W &trans &mt LC(D) LBKT &mt LC(L) RBKT &trans &trans   &trans &trans   &trans &trans &trans
+     &trans   &trans &trans  &trans &td13 &mt P E &trans   &trans &trans   &trans &trans &trans
+     &trans   &trans &trans  &mt C LC(MINUS) &mt LC(V) LC(D) &mt V LC(EQUAL) &trans &trans &trans &trans &trans &trans 
+                    	     &mt KP_ENTER DEL &lt 1 TAB &kp SPACE &trans &trans &trans
+                        >;
+                };
+        };
+};
