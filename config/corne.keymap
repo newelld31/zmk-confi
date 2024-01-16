@@ -11,9 +11,10 @@
 #include <dt-bindings/zmk/outputs.h>
 
 //Personal includes
-#include "../Includes/settings.dtsi"
-#include "../Includes/behaviours_homerow_mods.dtsi"
+#include "Includes/settings.dtsi"
+#include "Includes/behaviours_homerow_mods.dtsi"
 #include "../zmk-nodefree-config/helper.h"
+#include "../zmk-nodefree-config/keypos_def/keypos_42keys.h"
 
 #define DEF_Z &mt LC(Z) Z
 #define DEF_X &mt LC(X) X
