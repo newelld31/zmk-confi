@@ -124,14 +124,6 @@
             bindings = <&kp SLASH>, <&kp BACKSLASH>;
         };
 
-        td13: tap_dance_13 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_13";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&as LSHIFT T>, <&kp LC(T)>;
-        };
-
         
     };
     combos {
@@ -204,14 +196,7 @@
             key-positions = <27 28>;
             bindings = <&td12>;
         };
-
-        compatible = "zmk,combos";
-        combo_rbracket {
-            timeout-ms = <50>;
-            key-positions = <26 27>;
-            bindings = <&td13>;
-        };
-
+        
           compatible = "zmk,combos";
         combo_adobe {
             timeout-ms = <50>;
