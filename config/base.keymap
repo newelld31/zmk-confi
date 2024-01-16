@@ -21,7 +21,6 @@
 #define DEF_Adobe & BT_1
 
 //Personal includes
-#include "../zmk-nodefree-config/helper.h"
 #include "Includes/settings.dtsi"
 #include "Includes/behaviours_homerow_mods.dtsi"
 
