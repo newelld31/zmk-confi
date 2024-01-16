@@ -24,6 +24,7 @@
 #include "Includes/settings.dtsi"
 #include "Includes/behaviours_homerow_mods.dtsi"
 
+/ {
 
         keymap {
                 compatible = "zmk,keymap";
