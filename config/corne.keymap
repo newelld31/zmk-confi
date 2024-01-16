@@ -11,8 +11,8 @@
 #include <dt-bindings/zmk/outputs.h>
 
 //Personal includes
-#include "includes/settings.dtsi"
-#include "includes/behaviours_homerow_mods.dtsi"
+#include "Includes/settings.dtsi"
+#include "Includes/behaviours_homerow_mods.dtsi"
 #include "zmk-nodefree-config/helper.h"
 
 #define DEF_Z &mt LC(Z) Z
