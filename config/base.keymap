@@ -73,13 +73,7 @@ ZMK_BEHAVIOR(br, tap_dance,
     bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
 )
 
-ZMK_BEHAVIOR(hyph, tap_dance,
-    tapping-term-ms = <200>;
-    bindings = bindings = <&kp MINUS>, <&kp UNDERSCORE>, <&kp TILDE>;
-)
-
 / {
-
         keymap {
                 compatible = "zmk,keymap";
 
