@@ -24,6 +24,60 @@
 #include "Includes/settings.dtsi"
 #include "Includes/behaviours_homerow_mods.dtsi"
 
+#undef COMBO_TERM
+#define COMBO_TERM 50
+ZMK_COMBO(Save, &kp LC(S), 15 16, ALL)
+ZMK_COMBO(Capsword, &caps_word, 14 15 16, ALL)
+ZMK_COMBO(esc, &kp ESC, 3 4, ALL)
+ZMK_COMBO(semicolon, &kp SEMICOLON, 7 8, ALL)
+ZMK_COMBO(colon, &kp COLON, 7 8 9, ALL)
+ZMK_COMBO(dot, &kp DOT, 19 20, ALL)
+ZMK_COMBO(comma, &kp COMMA, 19 20 21, ALL)
+ZMK_COMBO(par, &par, 31 32, ALL)
+ZMK_COMBO(bracket, &br, 31 32 33, ALL)
+ZMK_COMBO(slash, &sl, 27 28, ALL)
+ZMK_COMBO(undo, &kp LC(Z), 25 26, ALL)
+
+ZMK_BEHAVIOR(qu, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp QUESTION>, <&kp EXCLAMATION>;
+)
+
+ZMK_BEHAVIOR(z_undo, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp Z>, <&kp LC(Z)>;
+)
+
+ZMK_BEHAVIOR(ap_qo, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp APOSTROPHE>, <&kp DOUBLE_QUOTES>;
+)
+
+ZMK_BEHAVIOR(at, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp AT_SIGN>, <&kp AMPERSAND>;
+)
+
+ZMK_BEHAVIOR(hy, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = bindings = <&kp MINUS>, <&kp UNDERSCORE>, <&kp TILDE>;
+)
+
+ZMK_BEHAVIOR(par, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp LPAR>, <&kp RPAR>;
+)
+
+ZMK_BEHAVIOR(br, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+)
+
+ZMK_BEHAVIOR(br, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp SLASH>, <&kp BACKSLASH>;
+)
+
 / {
 
         keymap {
@@ -31,31 +85,42 @@
 
                 default_layer {
                         bindings = <
-       &trans &kp Q &kp W &hm_l LCTRL(F) F  &hm_l LCTRL(I) P   &mt LC(B) B &kp J &kp L  &kp U     &kp Y &td7 &trans    
-     &trans &hm_l LGUI A &hm_l LALT R &hm_l LCTRL S  &hm_shift_l LSHFT T  &kp G &kp M &hm_shift_r RSHFT N &hm_r RCTRL E &hm_r LALT I &hm_r RGUI O &trans 
-    &trans &td9 &hm_l LCTRL(X) X  &hm_l LCTRL(C) C &hm_l LCTRL(V) D   &kp V &lt 4 K &kp H  &td0  &td8 &td6 &trans           
-                    &kp DEL &lt 1 TAB &lt 2 SPACE &kp BACKSPACE &lt 3 ENTER   &kp DEL
+// ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮    ╭────────────────────────┬────────────────────────┬────────────────────────┬───────────────────────┬────────────────────────┬────────────────────────╮
+     &trans                   &kp Q                    &kp W                    &hm_l LCTRL(F) F         &hm_l LCTRL(I)           &hm_l LCTRL(B) B              &kp J                    &kp L                    &hm_r MY_HYPER U         &kp Y                    &qu                      &trans
+// ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┼────────────────────────┤
+     &trans                   &hm_l LGUI A             &hm_l LALT R             &hm_l LCTRL S            &hm_shift_l LSHFT T      &kp G                         &kp M                    &hm_shift_r RSHFT N      &hm_r RCTRL E            &hm_r LALT I             &hm_r RGUI O             &trans
+// ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┼────────────────────────┤
+     &trans                   &z_undo                  &hm_l LCTRL(X) X         &hm_l LCTRL(C)           &hm_l LCTRL(V) D         &kp V                         &lt 4 K                  &kp H                    &ap_qo                   &at                      &hy                      &trans
+// ╰────────────────────────┴────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┼────────────────────────╯
+                                                                                &kp DEL                  &lt 1 TAB                &lt 2 SPACE                   &kp BACKSPACE            &lt 3 ENTER              &kp DEL
+//                                                                            ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
                         >;
                 };
+                
                 nav_layer {
-                        bindings = <
-        &trans &trans &kp HOME &kp UP  &kp END   &kp PAGE_UP         &trans   &kp F1 &kp F2   &kp F3 &kp F4 &trans   
-    &trans &kp DEL &kp LEFT &kp DOWN  &kp RIGHT  &kp PAGE_DOWN &trans    &kp F5 &kp F6   &kp F7 &kp F8 &trans   
-     &trans &trans &kp BACKSPACE &mt C LC(MINUS)  &trans &mt V LC(EQUAL)  &trans  &kp F9 &kp F10   &kp F11 &kp F12 &trans   
-                    &trans   &trans &trans   &trans &trans   &trans
+                        bindings = <              
+// ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮    ╭────────────────────────┬────────────────────────┬────────────────────────┬───────────────────────┬────────────────────────┬────────────────────────╮
+     &trans                   &trans                   &kp HOME                 &kp UP                   &kp END                  &kp PAGE_UP                   &trans                    &kp F1                   &kp F2                  &kp F3                   &kp F4                   &trans
+// ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┼────────────────────────┤
+     &trans                   &kp DEL                  &kp LEFT                 &kp DOWN                 &kp RIGHT                &kp PAGE_DOWN                 &trans                    &kp F5                   &kp F6                  &kp F7                   &kp F8                   &trans
+// ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┼────────────────────────┤
+     &trans                   &trans                   &kp BACKSPACE            &mt C LC(MINUS)          &trans                   &mt V LC(EQUAL)               &trans                    &kp F9                   &kp F10                 &kp F11                  &kp F12                  &trans
+// ╰────────────────────────┴────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┼────────────────────────╯
+                                                                                &trans                   &trans                   &trans                        &trans                    &trans                   &trans 
+//                                                                            ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
                         >;
                 };
 
                 num_layer {
                         bindings = <
       &trans &trans &kp CARET &kp HASH &kp PERCENT   &trans   &trans &kp N1 &kp N2 &kp N3 &trans &trans 
-     &trans &kp DOLLAR  &kp STAR &kp PLUS  &kp EQUAL  &kp PIPE     &trans &td2  &kp N5 &kp N6 &kp N0 &trans 
+     &trans &kp DOLLAR  &kp STAR &kp PLUS  &kp EQUAL  &kp PIPE     &trans &kp N4  &kp N5 &kp N6 &kp N0 &trans 
     &trans &trans   &trans &kp SLASH &kp MINUS   &trans      &trans &kp N7  &kp N8 &kp N9 &trans &trans 
                     	     &trans   &trans &trans   &trans &trans   &trans
                         >;
                 };
 
-                        sym_layer {
+                 sym_layer {
                         bindings = <
       &trans &trans &trans &trans  &kp LC(LA(LS(B)))   &trans &bt BT_CLR  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans
      &trans   &trans &trans  &trans &kp C_PLAY_PAUSE   &trans &out OUT_USB &out OUT_BLE &trans &trans &bt BT_SEL 0 &trans 
