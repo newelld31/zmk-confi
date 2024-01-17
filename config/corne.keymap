@@ -1,5 +1,11 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#if CONFIG_WIRELESS
+    #include <dt-bindings/zmk/bt.h>
+    #define _BT_SEL_KEYS_ &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR
+#else
+    #define _BT_SEL_KEYS_ &trans &trans &trans &trans &trans
+#endif
 
 #include "../zmk-nodefree-config/helper.h"
 #include "../zmk-nodefree-config/international_chars/german.dtsi"
@@ -12,7 +18,7 @@
 #define DEF 0  // layer shortcuts, must match order in which they are defined below
 #define NAV 1
 #define NUM 2
-#define GER 3
+#define FUN 3
 
 /* custom behaviors */
 
@@ -117,6 +123,23 @@ ZMK_BEHAVIOR(hyph, tap_dance,
     bindings = <&kp MINUS>, <&kp UNDERSCORE>, <&kp TILDE>;
 )
 
+// tap: num-word | double-tap: sticky num-layer | hold: num-layer
+#define SMART_NUM &smart_num NUM 0
+ZMK_BEHAVIOR(smart_num, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    bindings = <&mo>, <&num_dance>;
+)
+ZMK_BEHAVIOR(num_dance, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&num_word>, <&sl NUM>;  // reverse this for sticky-num on single tap
+)
+&num_word {  // num-word, requires PR #1451
+    layers = <NUM>;
+    continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
+};
+
 /* keymap */
 
 ZMK_LAYER(base,
@@ -127,7 +150,7 @@ ZMK_LAYER(base,
 // 	├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┤
     ___    &z_undo                  &kp X                    &kp C                    &kp D                    &kp V                         &kp K                    &kp H                    &ap_qo                   &at                      &hyph                  ___
 // 	╰────────────────────────┴────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┴───────────────────────┴────────────────────────╯
-                                                      	     &lt NUM DEL              &lt NAV TAB              &kp SPACE                     &kp BACKSPACE            &kp ENTER                &kp DEL
+                                                      	     SMART_NUM                &lt NAV TAB              &kp SPACE                     &kp BACKSPACE            &kp ENTER                &kp DEL
 //                                             	          ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
 )
 
