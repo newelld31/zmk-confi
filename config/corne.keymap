@@ -1,0 +1,154 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+#include "../zmk-nodefree-config/helper.h"
+#include "../zmk-nodefree-config/international_chars/german.dtsi"
+#include "../zmk-nodefree-config/keypos_def/keypos_42keys.h"
+
+/* layer and key shortcuts */
+
+#define ___ &trans
+
+#define DEF 0  // layer shortcuts, must match order in which they are defined below
+#define NAV 1
+#define NUM 2
+#define GER 3
+
+/* custom behaviors */
+
+// homerow mods
+ZMK_BEHAVIOR(hrm, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <125>;
+    bindings = <&kp>, <&kp>;
+)
+
+// tap: sticky shift | double tap: capsword
+ZMK_BEHAVIOR(ss_cw, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&sk LSHFT>, <&caps_word>;
+)
+
+// tap: backspace | shift + tap: delete | hold: num layer
+ZMK_BEHAVIOR(bs_del_num, mod_morph,
+    bindings = <&lt NUM BSPC>, <&kp DEL>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
+// windows sleep macro
+ZMK_BEHAVIOR(win_sleep, macro,
+    wait-ms = <100>;
+    tap-ms = <5>;
+    bindings = <&kp LG(X) &kp U &kp S>;
+)
+
+// euro sign
+ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)  // €
+
+// replace a/o/u/s with German umlauts when NAV and NUM are held jointly
+ZMK_CONDITIONAL_LAYER(NAV NUM, GER)
+
+// combos
+/*                KEY POSITIONS
+
+  ╭─────────────────────────╮ ╭─────────────────────────╮
+  │ LT5 LT4 LT3 LT2 LT1 LT0 │ │ RT0 RT1 RT2 RT3 RT4 RT5 │
+  │ LM5 LM4 LM3 LM2 LM1 LM0 │ │ RM0 RM1 RM2 RM3 RM4 RM5 │
+  │ LB5 LB4 LB3 LB2 LB1 LB0 │ │ RB0 RB1 RB2 RB3 RB4 RB5 │
+  ╰───────────╮ LH2 LH1 LH0 │ │ RH0 RH1 RH2 ╭───────────╯
+              ╰─────────────╯ ╰─────────────╯ */
+          
+#undef COMBO_TERM
+#define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
+ZMK_COMBO(Save, &kp LC(S), LM1 LM2, ALL)
+ZMK_COMBO(Capsword, &caps_word, LM1 LM2 LM3, ALL)
+ZMK_COMBO(esc, &kp ESC, LT1 LT2, ALL)
+ZMK_COMBO(semicolon, &kp SEMICOLON, RT1 RT2, ALL)
+ZMK_COMBO(colon, &kp COLON, RT1 RT2 RT3, ALL)
+ZMK_COMBO(dot, &kp DOT, RM1 RM2, ALL)
+ZMK_COMBO(comma, &kp COMMA, RM1 RM2 RM3, ALL)
+ZMK_COMBO(par, &par, RB1 RB2, ALL)
+ZMK_COMBO(bracket, &br, RB1 RB2 RB3, ALL)
+ZMK_COMBO(slash, &sla, LB1 LB2, ALL)
+ZMK_COMBO(undo, &kp LC(Z), LB3 LB4, ALL)
+ZMK_COMBO(copy, &kp LC(C), LM1 LB1, ALL)
+
+ZMK_BEHAVIOR(qu, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp QUESTION>, <&kp EXCLAMATION>;
+)
+
+ZMK_BEHAVIOR(z_undo, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp Z>, <&kp LC(Z)>;
+)
+
+ZMK_BEHAVIOR(ap_qo, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp APOSTROPHE>, <&kp DOUBLE_QUOTES>;
+)
+
+ZMK_BEHAVIOR(at, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp AT_SIGN>, <&kp AMPERSAND>;
+)
+
+ZMK_BEHAVIOR(sla, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp SLASH>, <&kp BACKSLASH>;
+)
+
+ZMK_BEHAVIOR(par, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp LPAR>, <&kp RPAR>;
+)
+
+ZMK_BEHAVIOR(br, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+)
+
+ZMK_BEHAVIOR(hyph, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp MINUS>, <&kp UNDERSCORE>, <&kp TILDE>;
+)
+
+/* keymap */
+
+ZMK_LAYER(base,
+// 	╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮    ╭────────────────────────┬────────────────────────┬────────────────────────┬───────────────────────┬────────────────────────╮
+    ___	   &kp Q                    &kp W                    &kp F                    &kp I                    &kp B                         &kp J                    &kp L                    &kp U                    &kp Y                    &qu                    ___
+//	├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┤
+    ___	   &hrm LGUI A              &hrm LALT R              &hrm LCTRL S             &hrm LSHFT T             &kp G                         &kp M                    &hrm RSHFT N             &hrm RCTRL E             &hrm LALT I              &hrm RGUI O            ___
+// 	├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┤
+    ___    &z_undo                  &kp X                    &kp C                    &kp D                    &kp V                         &kp K                    &kp H                    &ap_qo                   &at                      &hyph                  ___
+// 	╰────────────────────────┴────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┴───────────────────────┴────────────────────────╯
+                                                      	     &lt NUM DEL              &lt NAV TAB              &kp SPACE                     &kp BACKSPACE            &kp ENTER                &kp DEL
+//                                             	          ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
+)
+
+ZMK_LAYER(nav,            
+//	 ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮    ╭────────────────────────┬────────────────────────┬────────────────────────┬───────────────────────┬────────────────────────╮
+    ___    ___                      &kp HOME                 &kp UP                   &kp END                  &kp PAGE_UP                   ___                       &kp F1                   &kp F2                  &kp F3                   &kp F4                  ___
+//	 ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┤
+    ___    &kp DEL                  &kp LEFT                 &kp DOWN                 &kp RIGHT                &kp PAGE_DOWN                 &trans                    &kp F5                   &kp F6                  &kp F7                   &kp F8                  ___
+//	 ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┤
+    ___    ___                      &kp BACKSPACE            &kp LC(MINUS)            &trans                   &kp LC(EQUAL)                 ___                       &kp F9                   &kp F10                 &kp F11                  &kp F12                 ___
+//	 ╰────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┴───────────────────────┴────────────────────────╯
+                                                             ___                       ___                      ___                          ___                       ___                      ___ 
+//                                             	           ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
+)
+
+ZMK_LAYER(num,
+// ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮    ╭────────────────────────┬────────────────────────┬────────────────────────┬───────────────────────┬────────────────────────╮
+     ___                      &kp CARET                &kp HASH                 &kp PERCENT              ___                           ___                       &kp N1                   &kp N2                  &kp N3                   ___
+// ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┤
+     &kp DOLLAR               &kp STAR                 &kp PLUS                 &kp EQUAL                &kp PIPE                      ___                       &kp N4                   &kp N5                  &kp N6                   &kp N0
+// ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┤
+     ___                      ___                      &kp SLASH                &kp MINUS                ___                           ___                       &kp N7                   &kp N8                  &kp N9                   ___
+// ╰────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┴───────────────────────┴────────────────────────╯
+                                                       ___                      ___                      ___                           ___                       ___                      ___ 
+//                                                   ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
+)
+
