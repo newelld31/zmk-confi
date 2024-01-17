@@ -20,7 +20,12 @@
 #define NUM 2
 
 //Personal includes
+#include "../zmk-nodefree-config/keypos_def/keypos_36keys.h"
 #include "../zmk-nodefree-config/helper.h"
+#define CONFIG_WIRELESS 1
+
+/* use 5-column layout for Zen */
+/ { chosen { zmk,matrix_transform = &five_column_transform; }; };
 
 /* Global settings */
 
