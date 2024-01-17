@@ -177,7 +177,7 @@ ZMK_BEHAVIOR(hyph, tap_dance,
 
 ZMK_BEHAVIOR(dol, tap_dance,
     tapping-term-ms = <200>;
-    bindings = <&kp DOLLAR>, <&kp &kp CARET>, <&kp PIPE>;
+    bindings = <&kp DOLLAR>, <&kp CARET>, <&kp PIPE>;
 )
 
 /* Caps-word, num-word and smart-mouse */
