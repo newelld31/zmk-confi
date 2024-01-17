@@ -119,7 +119,7 @@ ZMK_COMBO(undo, &kp LC(Z), LB3 LB4, ALL)
 ZMK_COMBO(copy, &kp LC(C), LM1 LB1, ALL)
 ZMK_COMBO(paste, &kp LC(V), LM1 LT1, ALL)
 ZMK_COMBO(find, &kp LC(F), LT2 LM2, ALL)
-ZMK_COMBO(del, &kp DEL, LHl LH2, ALL)
+ZMK_COMBO(del, &kp DEL, LH1 LH2, ALL)
 
 ZMK_BEHAVIOR(qu, tap_dance,
     tapping-term-ms = <200>;
