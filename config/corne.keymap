@@ -108,7 +108,7 @@ ZMK_BEHAVIOR(hyph, tap_dance,
 
 ZMK_LAYER(default_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          &kp Q         &kp W      &hrm LCTRL(F) F &hrm LCTRL(I) &hrm LCTRL(B) B    &kp J         &kp L         &kp U         &kp Y         &qu
+          &kp Q         &kp W      &hrm LCTRL(F) F &hrm LCTRL(I) I &hrm LCTRL(B) B    &kp J         &kp L         &kp U         &kp Y         &qu
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &hrm LGUI A   &hrm LALT R   &hrm LCTRL S  &hrm LSHFT T  &kp G             &kp M         &hrm RSHFT N  &hrm LCTRL E  &hrm LALT I   &hrm LGUI O
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
