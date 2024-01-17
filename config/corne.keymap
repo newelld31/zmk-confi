@@ -102,6 +102,7 @@ ZMK_BEHAVIOR(br, tap_dance,
 ZMK_BEHAVIOR(hyph, tap_dance,
     tapping-term-ms = <200>;
     bindings = <&kp MINUS>, <&kp UNDERSCORE>, <&kp TILDE>;
+)
 
 /* keymap */
 
