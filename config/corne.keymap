@@ -52,9 +52,17 @@ ZMK_CONDITIONAL_LAYER(NAV NUM, GER)
 // combos
 #undef COMBO_TERM
 #define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
-ZMK_COMBO(combo_sleep,  &win_sleep, RT3 RT4, NAV)  // custom sleep macro, only active on NAV layer
-ZMK_COMBO(combo_copy,   &kp LC(C),  LB2 LB3, ALL)  // Ctrl + C, active on all layers
-ZMK_COMBO(combo_paste,  &kp LC(V),  LB1 LB2, ALL)  // Ctrl + V, active on all layers
+ZMK_COMBO(Save, &kp LC(S), LM1 LM2, ALL, COMBO_TERM_FAST)
+ZMK_COMBO(Capsword, &caps_word, LM1 LM2 LM3, ALL, COMBO_TERM_FAST)
+ZMK_COMBO(esc, &kp ESC, LT1 LT2, ALL, COMBO_TERM_FAST)
+ZMK_COMBO(semicolon, &kp SEMICOLON, RT1 RT2, ALL, COMBO_TERM_FAST)
+ZMK_COMBO(colon, &kp COLON, RT1 RT2 RT3, ALL, COMBO_TERM_FAST)
+ZMK_COMBO(dot, &kp DOT, RM1 RM2, ALL, COMBO_TERM_FAST)
+ZMK_COMBO(comma, &kp COMMA, RM1 RM2 RM3, ALL, COMBO_TERM_FAST)
+ZMK_COMBO(par, &par, RB1 RB2, ALL, COMBO_TERM_FAST)
+ZMK_COMBO(bracket, &br, RB1 RB2 RB3, ALL, COMBO_TERM_FAST)
+ZMK_COMBO(slash, &sla, LB1 LB2, ALL, COMBO_TERM_FAST)
+ZMK_COMBO(undo, &kp LC(Z), LB3 LB4, ALL, COMBO_TERM_FAST)
 
 /* keymap */
 
@@ -66,7 +74,7 @@ ZMK_LAYER(default_layer,
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H         &kp COMMA     &kp DOT       &kp SEMI
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                      &kp ESC       &lt NAV SPACE &kp TAB           &kp RET       &bs_del_num   &ss_cw
+                                      &lt NUM DEL      &kp TAB       &lt NAV SPACE     &kp RET       &bs_del_num   &ss_cw
      //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
@@ -84,13 +92,13 @@ ZMK_LAYER(nav_layer,
 
 ZMK_LAYER(num_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          &kp ESC       &kp N7        &kp N8        &kp N9        &kp STAR          ___           ___           ___           ___           ___
+          ___           &kp N7        &kp N8        &kp N9        &kp STAR          ___           ___           ___           ___           ___
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &kp TAB       &kp N4        &kp N5        &kp N6        &kp PLUS          ___           &sk RSHFT     &sk LCTRL     &sk LALT      &sk LGUI
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &kp RET       &kp N1        &kp N2        &kp N3        &kp FSLH          ___           ___           ___           ___           ___
+          ___           &kp N1        &kp N2        &kp N3        &kp FSLH          ___           ___           ___           ___           ___
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                      &kp DOT       &kp N0        &kp MINUS         ___           ___           ___
+                                      ___           ___           ___               ___           ___           ___
      //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
