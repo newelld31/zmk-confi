@@ -104,7 +104,7 @@ MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
           
 #undef COMBO_TERM
 #define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
-ZMK_COMBO(caps, &kp CAPS, LM0 LM1, ALL)
+ZMK_COMBO(enter, &kp ENTER, LM0 LM1, ALL)
 ZMK_COMBO(Save, &kp LC(S), LT1 LT0, ALL)
 ZMK_COMBO(Capsword, &caps_word, LM1 LM2 LM3, ALL)
 ZMK_COMBO(esc, &kp ESC, LT1 LT2, ALL)
@@ -117,8 +117,9 @@ ZMK_COMBO(bracket, &br, RB1 RB2 RB3, ALL)
 ZMK_COMBO(slash, &sla, LB1 LB2, ALL)
 ZMK_COMBO(undo, &kp LC(Z), LB3 LB4, ALL)
 ZMK_COMBO(copy, &kp LC(C), LM1 LB1, ALL)
-ZMK_COMBO(paste, &kp LC(V), LM1 LT1, ALL)
-ZMK_COMBO(del, NAV_DEL, LH1 LH0, ALL)
+ZMK_COMBO(cut, &kp LC(C), LM1 LT1, ALL)
+ZMK_COMBO(paste, &kp LC(V), LM0 LT0, ALL)
+ZMK_COMBO(del, NAV_DEL, LM4 LM3, ALL)
 ZMK_COMBO(up, NAV_UP, LT2 LM2, ALL)
 ZMK_COMBO(down, NAV_DOWN, LM2 LB2, ALL)
 ZMK_COMBO(right, NAV_RIGHT, LM1 LM2, ALL)
@@ -127,6 +128,8 @@ ZMK_COMBO(pgup, &kp PAGE_UP, LT3 LM3, ALL)
 ZMK_COMBO(pgdown, &kp PAGE_DOWN, LB3 LM3, ALL)
 ZMK_COMBO(zoomin, &kp LC(EQUAL), LT4 LM4, ALL)
 ZMK_COMBO(zoomout, &kp LC(MINUS), LM4 LB4, ALL)
+ZMK_COMBO(tab, &kp TAB, LB1 LB0, ALL)
+ZMK_COMBO(caps, &kp CAPS, LM4 LM3, ALL)
 
 ZMK_BEHAVIOR(qu, tap_dance,
     tapping-term-ms = <200>;
@@ -206,7 +209,7 @@ ZMK_LAYER(base,
 // 	├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┤
     ___    &z_undo                  &kp X                    &kp C                    &kp D                    &kp V                         &kp K                    &kp H                    &ap_qo                   &at                      &hyph                  ___
 // 	╰────────────────────────┴────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┴───────────────────────┴────────────────────────╯
-                                                      	     SMART_NUM                &lt NAV TAB              &kp SPACE                     NAV_BSPC                 &kp ENTER                &kp DEL
+                                                      	     NAV_DEL                 SMART_NUM                 &kp SPACE                     NAV_BSPC                 &kp ENTER                &kp DEL
 //                                             	          ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
 )
 
