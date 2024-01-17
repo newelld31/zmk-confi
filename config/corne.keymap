@@ -49,12 +49,6 @@ ZMK_BEHAVIOR(win_sleep, macro,
     bindings = <&kp LG(X) &kp U &kp S>;
 )
 
-// euro sign
-ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)  // €
-
-// replace a/o/u/s with German umlauts when NAV and NUM are held jointly
-ZMK_CONDITIONAL_LAYER(NAV NUM, GER)
-
 // combos
 /*                KEY POSITIONS
 
