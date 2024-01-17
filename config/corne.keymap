@@ -108,11 +108,11 @@ ZMK_BEHAVIOR(hyph, tap_dance,
 
 ZMK_LAYER(default_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-          &kp Q         &kp W         &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp Y         &qu
+          &kp Q         &kp W      &hrm LCTRL(F) F &hrm LCTRL(I) &hrm LCTRL(B) B    &kp J         &kp L         &kp U         &kp Y         &qu
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &hrm LGUI A   &hrm LALT R   &hrm LCTRL S  &hrm LSHFT T  &kp G             &kp M         &hrm RSHFT N  &hrm LCTRL E  &hrm LALT I   &hrm LGUI O
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-          &z_undo    &hml LCTRL(X) X&hml LCTRL(C) C &hml LCTRL(V) D &kp V           &kp K         &kp H         &ap_qo        &at           &hyph
+          &z_undo    &hrm LCTRL(X) X&hrm LCTRL(C) C &hrm LCTRL(V) D &kp V           &kp K         &kp H         &ap_qo        &at           &hyph
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                                       &lt NUM DEL   &kp TAB       &lt NAV SPACE     &kp BACKSPACE &kp ENTER     &kp DEL
      //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
