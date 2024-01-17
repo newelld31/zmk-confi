@@ -64,6 +64,45 @@ ZMK_COMBO(bracket, &br, RB1 RB2 RB3, ALL)
 ZMK_COMBO(slash, &sla, LB1 LB2, ALL)
 ZMK_COMBO(undo, &kp LC(Z), LB3 LB4, ALL)
 
+ZMK_BEHAVIOR(qu, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp QUESTION>, <&kp EXCLAMATION>;
+)
+
+ZMK_BEHAVIOR(z_undo, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp Z>, <&kp LC(Z)>;
+)
+
+ZMK_BEHAVIOR(ap_qo, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp APOSTROPHE>, <&kp DOUBLE_QUOTES>;
+)
+
+ZMK_BEHAVIOR(at, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp AT_SIGN>, <&kp AMPERSAND>;
+)
+
+ZMK_BEHAVIOR(sla, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp SLASH>, <&kp BACKSLASH>;
+)
+
+ZMK_BEHAVIOR(par, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp LPAR>, <&kp RPAR>;
+)
+
+ZMK_BEHAVIOR(br, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+)
+
+ZMK_BEHAVIOR(hyph, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&kp MINUS>, <&kp UNDERSCORE>, <&kp TILDE>;
+
 /* keymap */
 
 ZMK_LAYER(default_layer,
