@@ -73,7 +73,7 @@ ZMK_COMBO(bracket, &br, RB1 RB2 RB3, ALL)
 ZMK_COMBO(slash, &sla, LB1 LB2, ALL)
 ZMK_COMBO(undo, &kp LC(Z), LB3 LB4, ALL)
 ZMK_COMBO(copy, &kp LC(C), LM1 LB1, ALL)
-ZMK_COMBO(paste, &kp LC(V), LM1 LB1, ALL)
+ZMK_COMBO(paste, &kp LC(V), LM1 LT1, ALL)
 
 ZMK_BEHAVIOR(qu, tap_dance,
     tapping-term-ms = <200>;
