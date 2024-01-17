@@ -62,6 +62,36 @@ ZMK_BEHAVIOR(win_sleep, macro,
     quick-tap-ms = <QUICK_TAP_MS>;
 };
 
+
+/* Nav cluster */
+
+// long-tap action on hold, short-tap action on all interrupts
+#define MT_CORE \
+    flavor = "tap-preferred"; \
+    tapping-term-ms = <220>; \
+    quick-tap-ms = <220>; \
+    hold-trigger-key-positions = <0>;
+
+&mt { MT_CORE };
+ZMK_BEHAVIOR(mt_home, hold_tap, bindings = <&masked_home>, <&kp>; MT_CORE)
+ZMK_BEHAVIOR(mt_end,  hold_tap,  bindings = <&masked_end>, <&kp>; MT_CORE)
+
+#define NAV_LEFT  &mt_home 0   LEFT    // tap: left  | long-tap: beginning of line
+#define NAV_RIGHT &mt_end 0    RIGHT   // tap: right | long-tap: end       of line
+#define NAV_UP    &mt LC(HOME) UP      // tap: up    | long-tap: beginning of document
+#define NAV_DOWN  &mt LC(END)  DOWN    // tap: down  | long-tap: end       of document
+#define NAV_BSPC  &mt LC(BSPC) BSPC    // tap: bspc  | long-tap: delete word backward
+#define NAV_DEL   &mt LC(DEL)  DEL     // tap: del   | long-tap: delete word forward
+
+// mask CTRL when holding left/right to avoid accidental jumps to beginning/end of document
+#define MASK_MODS(NAME, MODS, BINDING) \
+    ZMK_BEHAVIOR(NAME, mod_morph, \
+        bindings = <BINDING>, <BINDING>; \
+        mods = <MODS>; \
+    )
+MASK_MODS(masked_home, (MOD_LCTL), &kp HOME)
+MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
+
 // combos
 /*                KEY POSITIONS
 
@@ -89,6 +119,7 @@ ZMK_COMBO(undo, &kp LC(Z), LB3 LB4, ALL)
 ZMK_COMBO(copy, &kp LC(C), LM1 LB1, ALL)
 ZMK_COMBO(paste, &kp LC(V), LM1 LT1, ALL)
 ZMK_COMBO(find, &kp LC(F), LT2 LM2, ALL)
+ZMK_COMBO(del, &kp DEL, LHl LH2, ALL)
 
 ZMK_BEHAVIOR(qu, tap_dance,
     tapping-term-ms = <200>;
@@ -174,9 +205,9 @@ ZMK_LAYER(base,
 
 ZMK_LAYER(nav,            
 //	 ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮    ╭────────────────────────┬────────────────────────┬────────────────────────┬───────────────────────┬────────────────────────╮
-    ___    ___                      &kp HOME                 &kp UP                   &kp END                  &kp PAGE_UP                   ___                       &kp F1                   &kp F2                  &kp F3                   &kp F4                  ___
+    ___    ___                      &kp HOME                 NAV_UP                   &kp END                  &kp PAGE_UP                   ___                       &kp F1                   &kp F2                  &kp F3                   &kp F4                  ___
 //	 ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┤
-    ___    &kp DEL                  &kp LEFT                 &kp DOWN                 &kp RIGHT                &kp PAGE_DOWN                 &trans                    &kp F5                   &kp F6                  &kp F7                   &kp F8                  ___
+    ___    &kp DEL                  NAV_LEFT                 NAV_DOWN                 NAV_RIGHT                &kp PAGE_DOWN                 &trans                    &kp F5                   &kp F6                  &kp F7                   &kp F8                  ___
 //	 ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┤
     ___    ___                      &kp BACKSPACE            &kp LC(MINUS)            &trans                   &kp LC(EQUAL)                 ___                       &kp F9                   &kp F10                 &kp F11                  &kp F12                 ___
 //	 ╰────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┴───────────────────────┴────────────────────────╯
