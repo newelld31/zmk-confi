@@ -118,16 +118,15 @@ ZMK_COMBO(slash, &sla, LB1 LB2, ALL)
 ZMK_COMBO(undo, &kp LC(Z), LB3 LB4, ALL)
 ZMK_COMBO(copy, &kp LC(C), LM1 LB1, ALL)
 ZMK_COMBO(paste, &kp LC(V), LM1 LT1, ALL)
-ZMK_COMBO(find, &kp LC(F), LT3 LM3, ALL)
 ZMK_COMBO(del, NAV_DEL, LH1 LH0, ALL)
 ZMK_COMBO(up, NAV_UP, LT2 LM2, ALL)
 ZMK_COMBO(down, NAV_DOWN, LM2 LB2, ALL)
 ZMK_COMBO(right, NAV_RIGHT, LM1 LM2, ALL)
-ZMK_COMBO(left, NAV_RIGHT, LM2 LM3, ALL)
-ZMK_COMBO(pgup, &kp PAGE_UP, LT4 LM4, ALL)
-ZMK_COMBO(pgdown, &kp PAGE_DOWN, LB4 LM4, ALL)
-ZMK_COMBO(zoomin, &kp LC(EQUAL), LT5 LM5, ALL)
-ZMK_COMBO(zoomout, &kp LC(MINUS), LM5 LB5, ALL)
+ZMK_COMBO(left, NAV_LEFT, LM2 LM3, ALL)
+ZMK_COMBO(pgup, &kp PAGE_UP, LT3 LM3, ALL)
+ZMK_COMBO(pgdown, &kp PAGE_DOWN, LB3 LM3, ALL)
+ZMK_COMBO(zoomin, &kp LC(EQUAL), LT4 LM4, ALL)
+ZMK_COMBO(zoomout, &kp LC(MINUS), LM4 LB4, ALL)
 
 ZMK_BEHAVIOR(qu, tap_dance,
     tapping-term-ms = <200>;
@@ -241,7 +240,7 @@ ZMK_LAYER(fun,
 //	 ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┤
     ___    ___                      ___                      ___                      ___                      ___                           ___                       &kp F5                   &kp F6                  &kp F7                   &kp F8                  ___
 //	 ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼───────────────────────┼────────────────────────┤
-    ___    ___                      ___                      ___                      ___                      ___                           ___                       &kp F9                   &kp F10                   &kp F11                 &kp F12                ___
+    ___    ___                      ___                      ___                      ___                      ___                           ___                       &kp F9                   &kp F10                 &kp F11                  &kp F12                 ___
 //	 ╰────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┴───────────────────────┴────────────────────────╯
                                                              ___                      ___                      ___                           ___                       ___                      ___ 
 //                                             	           ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
