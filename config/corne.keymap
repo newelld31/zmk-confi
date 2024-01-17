@@ -132,8 +132,8 @@ ZMK_COMBO(zoomout, &kp LC(MINUS), LM4 LB4, ALL)
 ZMK_COMBO(tab, &kp TAB, LB1 LB0, ALL)
 ZMK_COMBO(caps, &kp CAPS, LT4 LT3, ALL)
 ZMK_COMBO(mult, &kp STAR, LT0 LM0, ALL)
-ZMK_COMBO(hash, &kp HASH, LB0 LM0, ALL)
-ZMK_COMBO(back, NAV_BSPC, LT5 LM4, ALL)
+ZMK_COMBO(hash, &kp HASH, LM2 LB2 , ALL)
+ZMK_COMBO(back, NAV_BSPC, LT4 LM4, ALL)
 
 ZMK_BEHAVIOR(qu, tap_dance,
     tapping-term-ms = <200>;
