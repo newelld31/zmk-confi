@@ -133,7 +133,8 @@ ZMK_COMBO(tab, &kp TAB, LB1 LB0, ALL)
 ZMK_COMBO(caps, &kp CAPS, LT4 LT3, ALL)
 ZMK_COMBO(mult, &kp STAR, LT0 LM0, ALL)
 ZMK_COMBO(hash, &kp HASH, LT1 LT0, ALL)
-ZMK_COMBO(back, NAV_BSPC, LH1 LH2, ALL)
+ZMK_COMBO(back, NAV_BSPC, LH1 LM1, ALL)
+ZMK_COMBO(shift, ss_cw, LM1 LH0, ALL)
 
 ZMK_BEHAVIOR(qu, tap_dance,
     tapping-term-ms = <200>;
@@ -205,7 +206,7 @@ ZMK_BEHAVIOR(num_dance, tap_dance,
 )
 &num_word {  // num-word, requires PR #1451
     layers = <NUM>;
-    continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL UP DOWN RIGHT LEFT>;
+    continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL UP DOWN RIGHT LEFT SEMICOLON COLON>;
 };
 
 /* keymap */
