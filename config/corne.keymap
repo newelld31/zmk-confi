@@ -107,7 +107,7 @@ MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
 #define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
 ZMK_COMBO(enter, &kp ENTER, LM0 LM1, ALL)
 ZMK_COMBO(Save, &kp LC(S), LH1 LH0, ALL)
-ZMK_COMBO(Capsword, &caps_word, LT1 LT2 LT3, ALL)
+ZMK_COMBO(Capsword, &ss_cw, LT1 LT2 LT3, ALL)
 ZMK_COMBO(esc, &kp ESC, LT1 LT2, ALL)
 ZMK_COMBO(semicolon, &kp SEMICOLON, RT1 RT2, ALL)
 ZMK_COMBO(colon, &kp COLON, RT1 RT2 RT3, ALL)
@@ -133,8 +133,7 @@ ZMK_COMBO(tab, &kp TAB, LB1 LB0, ALL)
 ZMK_COMBO(caps, &kp CAPS, LT4 LT3, ALL)
 ZMK_COMBO(mult, &kp STAR, LT0 LM0, ALL)
 ZMK_COMBO(hash, &kp HASH, LT1 LT0, ALL)
-ZMK_COMBO(back, NAV_BSPC, LH1 LM1, ALL)
-ZMK_COMBO(shift, &ss_cw, LM1 LH0, ALL)
+ZMK_COMBO(back, NAV_BSPC, LM1 LH0, ALL)
 
 ZMK_BEHAVIOR(qu, tap_dance,
     tapping-term-ms = <200>;
