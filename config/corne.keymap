@@ -120,7 +120,7 @@ ZMK_COMBO(undo, &kp LC(Z), LB3 LB4, ALL)
 ZMK_COMBO(copy, &kp LC(C), LM1 LB1, ALL)
 ZMK_COMBO(cut, &kp LC(X), LM1 LT1, ALL)
 ZMK_COMBO(paste, &kp LC(V), LM0 LB0, ALL)
-ZMK_COMBO(del, NAV_DEL, LM4 LM3, ALL)
+ZMK_COMBO(back, NAV_BSPC, LM4 LM3, ALL)
 ZMK_COMBO(up, NAV_UP, LT2 LM2, ALL)
 ZMK_COMBO(down, NAV_DOWN, LM2 LB2, ALL)
 ZMK_COMBO(right, NAV_RIGHT, LM1 LM2, ALL)
@@ -133,7 +133,7 @@ ZMK_COMBO(tab, &kp TAB, LB1 LB0, ALL)
 ZMK_COMBO(caps, &kp CAPS, LT4 LT3, ALL)
 ZMK_COMBO(mult, &kp STAR, LT0 LM0, ALL)
 ZMK_COMBO(hash, &kp HASH, LT1 LT0, ALL)
-ZMK_COMBO(back, NAV_BSPC, LM1 LH0, ALL)
+ZMK_COMBO(win, swapper, LM1 LH0, ALL)
 
 ZMK_BEHAVIOR(qu, tap_dance,
     tapping-term-ms = <200>;
@@ -199,6 +199,13 @@ ZMK_BEHAVIOR(smart_num, hold_tap,
     quick-tap-ms = <QUICK_TAP_MS>;
     bindings = <&mo>, <&num_dance>;
 )
+
+// Alt+Tab swapper, requires PR #1366
+ZMK_BEHAVIOR(swapper, tri_state,
+    bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+    ignored-key-positions = <LT2>;
+)
+
 ZMK_BEHAVIOR(num_dance, tap_dance,
     tapping-term-ms = <200>;
     bindings = <&num_word>, <&sl NUM>;  // reverse this for sticky-num on single tap
