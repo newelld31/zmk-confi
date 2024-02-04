@@ -134,7 +134,7 @@ ZMK_COMBO(caps, &kp CAPS, LT4 LT3, ALL)
 ZMK_COMBO(mult, &kp STAR, LT0 LM0, ALL)
 ZMK_COMBO(hash, &kp HASH, LT1 LT0, ALL)
 ZMK_COMBO(win, &swapper, LM1 LH0, ALL)
-MK_COMBO(dot2, &kp DOT, LB3 LB2 LB1, ALL)
+ZMK_COMBO(dot2, &kp DOT, LB3 LB2 LB1, ALL)
 
 ZMK_BEHAVIOR(qu, tap_dance,
     tapping-term-ms = <200>;
