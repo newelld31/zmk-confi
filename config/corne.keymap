@@ -143,9 +143,29 @@ ZMK_BEHAVIOR(m_the, macro,
       bindings = <&kp T &kp H &kp E &kp SPACE>;
 )
 
+ZMK_BEHAVIOR(m_and, macro,
+      wait-ms = <0>;
+      tap-ms = <10>;
+      bindings = <&kp A &kp N &kp D &kp SPACE>;
+)
+
+ZMK_BEHAVIOR(m_you, macro,
+      wait-ms = <0>;
+      tap-ms = <10>;
+      bindings = <&kp Y &kp O &kp  &kp SPACE>;
+)
+
+ZMK_BEHAVIOR(m_that, macro,
+      wait-ms = <0>;
+      tap-ms = <10>;
+      bindings = <&kp Y &kp O &kp  &kp SPACE>;
+)
 
 // Steno Combos
 ZMK_COMBO(THE, &m_the,  LM1 LH0, ALL)
+ZMK_COMBO(AND, &m_and,  LM4 LH0, ALL)
+ZMK_COMBO(YOU, &m_you,  RH0 RT3, ALL)
+ZMK_COMBO(THAT, &m_that,  LM1 RB1 RH0, ALL)
 
 // Tap dance
 
