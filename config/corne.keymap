@@ -152,13 +152,13 @@ ZMK_BEHAVIOR(m_and, macro,
 ZMK_BEHAVIOR(m_you, macro,
       wait-ms = <0>;
       tap-ms = <10>;
-      bindings = <&kp Y &kp O &kp  &kp SPACE>;
+      bindings = <&kp Y &kp O &kp U &kp SPACE>;
 )
 
 ZMK_BEHAVIOR(m_that, macro,
       wait-ms = <0>;
       tap-ms = <10>;
-      bindings = <&kp Y &kp O &kp  &kp SPACE>;
+      bindings = <&kp T &kp H &kp A &kp &kpT SPACE>;
 )
 
 // Steno Combos
