@@ -165,7 +165,7 @@ ZMK_BEHAVIOR(m_that, macro,
 ZMK_COMBO(THE, &m_the,  LM1 LH0, ALL)
 ZMK_COMBO(AND, &m_and,  LM4 LH0, ALL)
 ZMK_COMBO(YOU, &m_you,  RH0 RT3, ALL)
-ZMK_COMBO(THAT, &m_that,  LM1 RB1 RH0, ALL)
+ZMK_COMBO(THAT, &m_that,  LM1 RB1 LH0, ALL)
 
 // Tap dance
 
