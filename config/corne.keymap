@@ -135,9 +135,6 @@ ZMK_COMBO(mult, &kp STAR, LT0 LM0, ALL)
 ZMK_COMBO(hash, &kp HASH, LT1 LT0, ALL)
 ZMK_COMBO(dot2, &kp DOT, LB3 LB2 LB1, ALL)
 
-// Steno
-ZMK_COMBO(THE, m_the,  LM1 LH0, ALL)
-
 // Steno Macros
 macros {
   ZMK_BEHAVIOR(m_the, macro
@@ -146,6 +143,9 @@ macros {
       bindings = <&kp T &kp H &kp E &kp SPACE>;
   )
 }
+
+// Steno
+ZMK_COMBO(THE, &m_the,  LM1 LH0, ALL)
 
 ZMK_BEHAVIOR(qu, tap_dance,
     tapping-term-ms = <200>;
