@@ -201,6 +201,14 @@ ZMK_BEHAVIOR(m_with, macro,
 
 ZMK_COMBO(WITH, &m_with, LH0 LT3 RM3, ALL)
 
+ZMK_BEHAVIOR(m_his, macro,
+      wait-ms = <0>;
+      tap-ms = <10>;
+      bindings = <&kp H &kp I &kp S &kp SPACE>;
+)
+
+ZMK_COMBO(HIS, &m_his, LH0 RB1, ALL)
+
 // Tap dance
 
 ZMK_BEHAVIOR(qu, tap_dance,
