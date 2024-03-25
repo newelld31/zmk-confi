@@ -176,7 +176,7 @@ ZMK_BEHAVIOR(hyph, tap_dance,
 )
 
 ZMK_BEHAVIOR(dol, tap_dance,
-    tapping-term-ms = <200>;
+    tapping-term-ms = <400>;
     bindings = <&kp DOLLAR>, <&kp CARET>, <&kp PIPE>;
 )
 
