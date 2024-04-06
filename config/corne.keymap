@@ -135,8 +135,84 @@ ZMK_COMBO(mult, &kp STAR, LT0 LM0, ALL)
 ZMK_COMBO(hash, &kp HASH, LT1 LT0, ALL)
 ZMK_COMBO(back, NAV_BSPC, LM1 LH0, ALL)
 
+// Steno Macros
+
+ZMK_BEHAVIOR(m_the, macro,
+      wait-ms = <0>;
+      tap-ms = <10>;
+      bindings = <&kp T &kp H &kp E &kp SPACE>;
+)
+
+ZMK_COMBO(THE, &m_the, LM1 LH0, ALL)
+
+ZMK_BEHAVIOR(m_and, macro,
+      wait-ms = <0>;
+      tap-ms = <10>;
+      bindings = <&kp A &kp N &kp D &kp SPACE>;
+)
+
+ZMK_COMBO(AND, &m_and, LM4 LH0, ALL)
+
+ZMK_BEHAVIOR(m_you, macro,
+      wait-ms = <0>;
+      tap-ms = <10>;
+      bindings = <&kp Y &kp O &kp U &kp SPACE>;
+)
+
+ZMK_COMBO(YOU, &m_you, LH0 RT3, ALL)
+
+ZMK_BEHAVIOR(m_that, macro,
+      wait-ms = <0>;
+      tap-ms = <10>;
+      bindings = <&kp T &kp H &kp A &kp T &kp SPACE>;
+)
+
+ZMK_COMBO(THAT, &m_that, LM1 RB1 LH0, ALL)
+
+ZMK_BEHAVIOR(m_was, macro,
+      wait-ms = <0>;
+      tap-ms = <10>;
+      bindings = <&kp W &kp A &kp S &kp SPACE>;
+)
+
+ZMK_COMBO(WAS, &m_was, LH0 LT3, ALL)
+
+ZMK_BEHAVIOR(m_for, macro,
+      wait-ms = <0>;
+      tap-ms = <10>;
+      bindings = <&kp F &kp O &kp R &kp SPACE>;
+)
+
+ZMK_COMBO(FOR, &m_for, LH0 LT2, ALL)
+
+ZMK_BEHAVIOR(m_are, macro,
+      wait-ms = <0>;
+      tap-ms = <10>;
+      bindings = <&kp A &kp R &kp E &kp SPACE>;
+)
+
+ZMK_COMBO(ARE, &m_are, LH0 LM3 LM4, ALL)
+
+ZMK_BEHAVIOR(m_with, macro,
+      wait-ms = <0>;
+      tap-ms = <10>;
+      bindings = <&kp W &kp I &kp T &kp H &kp SPACE>;
+)
+
+ZMK_COMBO(WITH, &m_with, LH0 LT3 RM3, ALL)
+
+ZMK_BEHAVIOR(m_his, macro,
+      wait-ms = <0>;
+      tap-ms = <10>;
+      bindings = <&kp H &kp I &kp S &kp SPACE>;
+)
+
+ZMK_COMBO(HIS, &m_his, LH0 RB1, ALL
+
+// Tap dance
+
 ZMK_BEHAVIOR(qu, tap_dance,
-    tapping-term-ms = <200>;
+    tapping-term-ms = <300>;
     bindings = <&kp QUESTION>, <&kp EXCLAMATION>;
 )
 
@@ -147,7 +223,7 @@ ZMK_BEHAVIOR(z_undo, tap_dance,
 
 ZMK_BEHAVIOR(ap_qo, tap_dance,
     tapping-term-ms = <200>;
-    bindings = <&kp APOSTROPHE>, <&kp DOUBLE_QUOTES>;
+    bindings = <&kp APOSTROPHE>, <&kp GRAVE>, <&kp GRAVE &kp GRAVE &kp GRAVE>;
 )
 
 ZMK_BEHAVIOR(at, tap_dance,
@@ -180,6 +256,11 @@ ZMK_BEHAVIOR(dol, tap_dance,
     bindings = <&kp DOLLAR>, <&kp CARET>, <&kp PIPE>;
 )
 
+ZMK_BEHAVIOR(per, tap_dance,
+    tapping-term-ms = <400>;
+    bindings = <&kp PIPE>, <&kp PERCENT>;
+)
+
 /* Caps-word, num-word and smart-mouse */
 
 // tap: sticky-shift | shift + tap/ double-tap: caps-word | hold: shift
@@ -205,7 +286,7 @@ ZMK_BEHAVIOR(num_dance, tap_dance,
 )
 &num_word {  // num-word, requires PR #1451
     layers = <NUM>;
-    continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL UP DOWN RIGHT LEFT SEMICOLON COLON>;
+    continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL UP DOWN RIGHT LEFT SEMICOLON COLON SPACE>;
 };
 
 /* keymap */
