@@ -96,12 +96,12 @@ MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
 // combos
 /*                KEY POSITIONS
 
-  ╭─────────────────────────╮ ╭─────────────────────────╮
+  ╭──────────────────╮  ╭──────────────────╮
   │ LT5 LT4 LT3 LT2 LT1 LT0 │ │ RT0 RT1 RT2 RT3 RT4 RT5 │
   │ LM5 LM4 LM3 LM2 LM1 LM0 │ │ RM0 RM1 RM2 RM3 RM4 RM5 │
   │ LB5 LB4 LB3 LB2 LB1 LB0 │ │ RB0 RB1 RB2 RB3 RB4 RB5 │
-  ╰───────────╮ LH2 LH1 LH0 │ │ RH0 RH1 RH2 ╭───────────╯#
-              ╰─────────────╯ ╰─────────────╯ */
+  ╰────────╮ LH2 LH1 LH0 │ │ RH0 RH1 RH2 ╭────────╯#
+               ╰─────────╯ ╰─────────╯ */
           
 #undef COMBO_TERM
 #define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)
@@ -250,7 +250,7 @@ ZMK_BEHAVIOR(hyph, tap_dance,
 
 ZMK_BEHAVIOR(dol, tap_dance,
     tapping-term-ms = <400>;
-    bindings = <&kp DOLLAR>, <&kp CARET>, <&kp PIPE>;
+    bindings = <&kp CARET>, <&kp DOLLAR>, <&kp PIPE>;
 )
 
 ZMK_BEHAVIOR(per, tap_dance,
