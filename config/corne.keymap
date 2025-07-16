@@ -260,34 +260,32 @@ ZMK_BEHAVIOR(per, tap_dance,
 
 /* Caps-word, num-word and smart-mouse */
 
-/* Magic-shift & auto-layers */
-
-// Tap: repeat after alpha, else sticky-shift |
-// Shift + tap/ double-tap: caps-word | Hold: shift.
-#define MAGIC_SHIFT &magic_shift LSHFT 0
-ZMK_HOLD_TAP(magic_shift, bindings = <&kp>, <&magic_shift_tap>;
-             flavor = "balanced"; tapping-term-ms = <200>;
-             quick-tap-ms = <QUICK_TAP_MS>;)
-ZMK_MOD_MORPH(magic_shift_tap, bindings = <&shift_repeat>, <&caps_word>;
-              mods = <(MOD_LSFT)>;)
-ZMK_ADAPTIVE_KEY(
-    shift_repeat, bindings = <&sk LSHFT>;
-    repeat {
-      trigger-keys = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z>;
-      bindings = <&key_repeat>;
-      max-prior-idle-ms = <1200>;
-      strict-modifiers;
-    };)
-&caps_word { // Mods deactivate caps-word, requires PR #1451. [TODO: rebase]
-  /delete-property/ ignore-modifiers;
+// tap: sticky-shift | shift + tap/ double-tap: caps-word | hold: shift
+ZMK_BEHAVIOR(smart_shft, mod_morph,
+    bindings = <&sk LSHFT>, <&caps_word>;
+    mods = <(MOD_LSFT)>;
+)
+&caps_word {  // mods deactivate caps-word, requires PR #1451
+    /delete-property/ ignore-modifiers;
 };
 
-// Tap: num-word | double-tap: sticky num-layer | Hold: num-layer.
+// tap: num-word | double-tap: sticky num-layer | hold: num-layer
 #define SMART_NUM &smart_num NUM 0
-ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
-             tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
-ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
-              tapping-term-ms = <200>;)
+ZMK_BEHAVIOR(smart_num, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+    bindings = <&mo>, <&num_dance>;
+)
+ZMK_BEHAVIOR(num_dance, tap_dance,
+    tapping-term-ms = <200>;
+    bindings = <&num_word>, <&sl NUM>;  // reverse this for sticky-num on single tap
+)
+&num_word {  // num-word, requires PR #1451
+    layers = <NUM>;
+    continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL UP DOWN RIGHT LEFT SEMICOLON COLON SPACE>;
+};
+
 
 
 /* keymap */
