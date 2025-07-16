@@ -281,7 +281,7 @@ ZMK_BEHAVIOR(num_dance, tap_dance,
     tapping-term-ms = <200>;
     bindings = <&num_word>, <&sl NUM>;  // reverse this for sticky-num on single tap
 )
-&num_word {  // num-word, requires PR #1451
+//&num_word {  // num-word, requires PR #1451
     layers = <NUM>;
     continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL UP DOWN RIGHT LEFT SEMICOLON COLON SPACE>;
 };
